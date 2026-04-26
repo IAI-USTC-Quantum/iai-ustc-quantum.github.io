@@ -8,6 +8,14 @@ const publications = [
     // ── 2026 ──
     {
         year: 2026,
+        title: "Refined Criteria for Quantum Random-Access Memory Error Suppression via an Efficient Large-Scale Simulator",
+        authors: ["YJ Wang", "TP Sun", "XN Zhuang", "XF Xu", "HY Liu", "C Xue", "YC Wu", "ZY Chen", "GP Guo"],
+        venue: "Physical Review Applied 25, 044069",
+        citations: 0,
+        doi: "10.1103/r2pt-dzn8"
+    },
+    {
+        year: 2026,
         title: "QuantumQA: Enhancing Scientific Reasoning via Physics-Consistent Dataset and Verification-Aware Reinforcement Learning",
         authors: ["SX Qu", "TP Sun", "YJ Wang", "HY Liu", "C Xue", "XF Xu", "H Fang", "Y Yang", "YC Wu", "GP Guo", "ZY Chen"],
         venue: "ACL 2026",
