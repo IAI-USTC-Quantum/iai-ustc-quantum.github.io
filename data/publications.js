@@ -8,6 +8,22 @@ const publications = [
     // ── 2026 ──
     {
         year: 2026,
+        title: "QuantumQA: Enhancing Scientific Reasoning via Physics-Consistent Dataset and Verification-Aware Reinforcement Learning",
+        authors: ["SX Qu", "TP Sun", "YJ Wang", "HY Liu", "C Xue", "XF Xu", "H Fang", "Y Yang", "YC Wu", "GP Guo", "ZY Chen"],
+        venue: "ACL 2026",
+        citations: 0,
+        arxiv: "2604.18176"
+    },
+    {
+        year: 2026,
+        title: "AI-Generated Image Detection Algorithm Based on Classical-Quantum Hybrid Neural Network",
+        authors: ["J Xu", "H Fang", "Y Yang", "K Chen", "ZY Chen", "MH Dou", "L Qu", "WM Zhang", "GP Guo"],
+        venue: "Science China Information Sciences 69 (1), 112501",
+        citations: 0,
+        doi: "10.1007/s11432-024-4475-4"
+    },
+    {
+        year: 2026,
         title: "Low-Overhead and High-Fidelity Preparation of Logical Non-Clifford States with Multilevel Transversal Injection",
         authors: ["J Zhang", "TH Wei", "XN Zhuang", "ZY Chen", "WC Kong", "YC Wu", "GP Guo"],
         venue: "Physical Review Letters 136, 080603",
@@ -66,11 +82,35 @@ const publications = [
     },
     {
         year: 2025,
-        title: "Quantum computational insurance and actuarial science",
-        authors: ["HY Liu", "XN Zhuang", "C Wang", "QS Li", "MH Dou", "ZY Chen", "C Xue", "YC Wu"],
-        venue: "Science China Information Sciences 68, 1–15",
-        citations: 2,
-        doi: "10.1007/s11432-025-2607"
+        title: "CAMEL: Physically Inspired Crosstalk-Aware Mapping and Gate Scheduling for Frequency-Tunable Quantum Chips",
+        authors: ["BH Lu", "P Wang", "ZY Chen", "HY Liu", "TP Sun", "P Duan", "YC Wu", "GP Guo"],
+        venue: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2025",
+        citations: 0,
+        doi: "10.1109/TCAD.2024.3507580"
+    },
+    {
+        year: 2025,
+        title: "Particle Swarm Optimization for a Variational Quantum Eigensolver",
+        authors: ["H Mei", "JY Zhao", "QS Li", "ZY Chen", "JJ Zhang", "QC Wang", "YC Wu", "GP Guo"],
+        venue: "Physical Chemistry Chemical Physics 26 (46), 29070-29081",
+        citations: 0,
+        doi: "10.1039/D4CP02021A"
+    },
+    {
+        year: 2025,
+        title: "Neural Network-Based Frequency Optimization for Superconducting Quantum Chips",
+        authors: ["BH Lu", "QS Li", "P Wang", "ZY Chen", "YC Wu", "GP Guo"],
+        venue: "Chinese Physics Letters 42 (3), 030204",
+        citations: 0,
+        doi: "10.1088/0256-307X/42/3/030204"
+    },
+    {
+        year: 2025,
+        title: "Hardware-Efficient Quantum Random Access Memory Design with a Native Gate Set on Superconducting Platforms",
+        authors: ["YJ Wang", "S Zhang", "TP Sun", "ZA Zhao", "XF Xu", "XN Zhuang", "HY Liu", "C Xue", "P Duan", "YC Wu", "ZY Chen", "GP Guo"],
+        venue: "Advanced Quantum Technologies 3, 2400519",
+        citations: 0,
+        doi: "10.1002/qute.202400519"
     },
 
     // ── 2024 ──
@@ -98,6 +138,22 @@ const publications = [
         citations: 3,
         doi: "10.1088/1367-2630/ad5707"
     },
+    {
+        year: 2024,
+        title: "Universal Scalable Characterization and Correction of Pulse Distortions in Controlled Quantum Systems",
+        authors: ["LL Guo", "P Duan", "S Zhang", "XX Yang", "C Zhang", "L Du", "HF Zhang", "HR Tao", "TL Wang", "ZL Jia", "ZY Chen", "GP Guo"],
+        venue: "Physical Review Applied 21 (6), 064060",
+        citations: 0,
+        doi: "10.1103/PhysRevApplied.21.064060"
+    },
+    {
+        year: 2024,
+        title: "Fast, Universal Scheme for Calibrating Microwave Crosstalk in Superconducting Circuits",
+        authors: ["XY Yang", "HF Zhang", "L Du", "HR Tao", "LL Guo", "TL Wang", "ZL Jia", "WC Kong", "ZY Chen", "P Duan", "GP Guo"],
+        venue: "Applied Physics Letters 125 (4), 044001",
+        citations: 0,
+        doi: "10.1063/5.0211159"
+    },
 
     // ── 2023 ──
     {
@@ -110,11 +166,35 @@ const publications = [
     },
     {
         year: 2023,
-        title: "Quantum encoding and analysis on continuous time stochastic process with financial applications",
+        title: "Quantum Encoding and Analysis on Continuous Time Stochastic Process with Financial Applications",
         authors: ["XN Zhuang", "ZY Chen", "C Xue", "YC Wu", "GP Guo"],
         venue: "Quantum 7, 1127",
         citations: 13,
         doi: "10.22331/q-2023-1127"
+    },
+    {
+        year: 2023,
+        title: "A Quantum Feature Selection Framework via Ground State Preparation",
+        authors: ["L Wang", "ZY Chen", "FY Le", "ZQ Yu", "C Xue", "XN Zhuang", "Q Yan", "Y Yang", "YC Wu", "GP Guo"],
+        venue: "Physica Scripta 98 (11), 115121",
+        citations: 0,
+        doi: "10.1088/1402-4896/ad0184"
+    },
+    {
+        year: 2023,
+        title: "Quantum Dynamic Mode Decomposition Algorithm for High-Dimensional Time Series Analysis",
+        authors: ["C Xue", "ZY Chen", "TP Sun", "XF Xu", "SM Chen", "HY Liu", "XN Zhuang", "YC Wu", "GP Guo"],
+        venue: "Intelligent Computing 2, 0045",
+        citations: 0,
+        doi: "10.34133/icomputing.0045"
+    },
+    {
+        year: 2023,
+        title: "Data-Driven Quantum Dynamical Embedding Method for Long-Term Prediction on Near-Term Quantum Computers",
+        authors: ["TP Sun", "ZY Chen", "C Xue", "HY Liu", "XN Zhuang", "YJ Wang", "SX Ma", "HF Zhang", "YC Wu", "GP Guo"],
+        venue: "Physical Review A 112 (5), 052438",
+        citations: 0,
+        doi: "10.1103/PhysRevA.112.052438"
     },
 
     // ── 2022 ──
