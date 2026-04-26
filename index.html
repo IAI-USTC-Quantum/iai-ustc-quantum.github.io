@@ -670,7 +670,7 @@
 
         <!-- Hero -->
         <section class="hero">
-            <p class="hero-index" data-i18n="hero_index">IAI-USTC · Quantum AI Group · 2024</p>
+            <p class="hero-index" data-i18n="hero_index">IAI-USTC · Quantum AI Group · 2021–2026</p>
 
             <!-- Bloch sphere SVG -->
             <div class="bloch-wrap">
@@ -779,7 +779,7 @@
         </div>
 
         <footer>
-            <p data-i18n="footer">© 2024 IAI-USTC-Quantum · Institute of Artificial Intelligence, Hefei Comprehensive National Science Center</p>
+            <p>© 2021–2026 IAI-USTC-Quantum · <a href="https://github.com/IAI-USTC-Quantum" data-i18n="footer_gh">GitHub</a> · <a href="https://iai.ustc.edu.cn" data-i18n="footer_institution">IAI-USTC</a></p>
         </footer>
     </div>
 
@@ -966,7 +966,8 @@
                 team_title: "Researchers",
                 contact_label: "Get in touch",
                 contact_github: "GitHub Organization",
-                footer: "© 2021–2026 IAI-USTC-Quantum · <a href=\"https://github.com/IAI-USTC-Quantum\">GitHub</a> · <a href=\"https://iai.ustc.edu.cn\">IAI-USTC</a>"
+                footer_gh: "GitHub",
+                footer_institution: "IAI-USTC"
             },
             zh: {
                 nav_home: "首页",
@@ -994,7 +995,8 @@
                 team_title: "研究人员",
                 contact_label: "联系我们",
                 contact_github: "GitHub 组织",
-                footer: "© 2021–2026 IAI-USTC-Quantum · <a href=\"https://github.com/IAI-USTC-Quantum\">GitHub</a> · <a href=\"https://iai.ustc.edu.cn\">IAI-USTC</a>"
+                footer_gh: "GitHub",
+                footer_institution: "IAI-USTC"
             }
         };
 
@@ -1002,7 +1004,7 @@
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
+                    el.textContent = translations[lang][key];
                 }
             });
             document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
