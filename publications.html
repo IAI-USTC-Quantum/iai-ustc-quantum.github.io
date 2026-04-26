@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications — IAI-USTC Quantum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #060a12;
+            --surface: #0c1220;
+            --surface-2: #111827;
+            --border: rgba(0, 229, 255, 0.1);
+            --border-glow: rgba(0, 229, 255, 0.25);
+            --text: #dde4f0;
+            --text-muted: #5a7090;
+            --text-dim: #3a5070;
+            --cyan: #00e5ff;
+            --cyan-dim: rgba(0, 229, 255, 0.15);
+            --cyan-glow: rgba(0, 229, 255, 0.4);
+            --amber: #f0b429;
+            --amber-dim: rgba(240, 180, 41, 0.12);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 200px;
+        }
+
+        /* ─── Top Nav ─── */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            height: 56px;
+            background: rgba(6, 10, 18, 0.8);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .nav-logo:hover { color: var(--cyan); text-decoration: none; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            letter-spacing: 0.03em;
+        }
+
+        .nav-link:hover { color: var(--text); background: var(--surface); border-color: var(--border); text-decoration: none; }
+        .nav-link.active { color: var(--cyan); background: var(--cyan-dim); border-color: rgba(0, 229, 255, 0.2); }
+
+        .nav-lang {
+            display: flex;
+            gap: 4px;
+            margin-left: 16px;
+            padding-left: 16px;
+            border-left: 1px solid var(--border);
+        }
+
+        .nav-lang button {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-lang button:hover { color: var(--text); background: var(--surface); }
+        .nav-lang button.active { color: var(--cyan); }
+
+        /* ─── Layout ─── */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 32px 80px;
+        }
+
+        /* ─── Hero ─── */
+        .page-hero {
+            padding: 100px 0 56px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .page-hero-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--cyan);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .page-hero-label::before, .page-hero-label::after {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        .page-hero h1 .accent {
+            color: var(--cyan);
+            text-shadow: 0 0 40px var(--cyan-glow);
+        }
+
+        .page-hero p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 460px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeUp 0.6s 0.2s ease forwards;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+            opacity: 0;
+            animation: fadeUp 0.6s 0.3s ease forwards;
+        }
+
+        .hero-badges img { height: 20px; border-radius: 3px; }
+
+        /* ─── Stats row ─── */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0 56px;
+            opacity: 0;
+            animation: fadeUp 0.6s 0.35s ease forwards;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cyan);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 6px;
+            display: block;
+        }
+
+        .stat-sep {
+            width: 1px;
+            background: var(--border);
+            align-self: stretch;
+        }
+
+        /* ─── Year group ─── */
+        .year-group {
+            margin-bottom: 56px;
+            opacity: 0;
+            animation: fadeUp 0.5s ease forwards;
+        }
+
+        .year-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .year-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            letter-spacing: 0.12em;
+            white-space: nowrap;
+        }
+
+        .year-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ─── Paper card ─── */
+        .paper-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s, background 0.2s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .paper-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--cyan);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .paper-card:hover {
+            border-color: var(--border-glow);
+            background: var(--surface-2);
+            transform: translateX(3px);
+        }
+
+        .paper-card:hover::before { opacity: 1; }
+
+        .paper-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .paper-year-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 100px;
+            background: var(--cyan-dim);
+            color: var(--cyan);
+            border: 1px solid rgba(0, 229, 255, 0.15);
+        }
+
+        .paper-venue {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-dim);
+        }
+
+        .paper-citations {
+            margin-left: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .paper-citations svg { opacity: 0.5; }
+
+        .paper-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .paper-authors {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .paper-authors .team-author { color: var(--cyan); font-weight: 500; }
+
+        .paper-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .paper-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+
+        .paper-link.doi {
+            background: rgba(0, 229, 255, 0.08);
+            color: var(--cyan);
+            border: 1px solid rgba(0, 229, 255, 0.15);
+        }
+
+        .paper-link.doi:hover {
+            background: rgba(0, 229, 255, 0.15);
+            text-decoration: none;
+        }
+
+        .paper-link.arxiv {
+            background: rgba(240, 180, 41, 0.08);
+            color: var(--amber);
+            border: 1px solid rgba(240, 180, 41, 0.15);
+        }
+
+        .paper-link.arxiv:hover {
+            background: rgba(240, 180, 41, 0.15);
+            text-decoration: none;
+        }
+
+        /* ─── Footer ─── */
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            opacity: 0;
+            animation: fadeUp 0.5s 0.9s ease forwards;
+        }
+
+        footer p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-dim);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: var(--cyan); text-decoration: none; }
+
+        /* ─── Animations ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 600px) {
+            .container { padding: 0 16px 60px; }
+            .top-nav { padding: 0 16px; }
+            .stats-row { gap: 24px; }
+            .paper-citations { display: none; }
+        }
+
+        /* ─── Scrollbar ─── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        ::selection { background: var(--cyan-dim); color: var(--cyan); }
+    </style>
+</head>
+<body>
+
+    <canvas class="bg-canvas" id="bg"></canvas>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="index.html" class="nav-logo">IAI-USTC Quantum</a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+            <a href="publications.html" class="nav-link active" data-i18n="nav_pub">Publications</a>
+            <div class="nav-lang">
+                <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+                <button id="lang-zh" onclick="switchLanguage('zh')">中文</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="page-hero">
+            <p class="page-hero-label" data-i18n="pub_label">Research Output</p>
+            <h1 data-i18n="pub_title">Publications</h1>
+            <p data-i18n="pub_sub">Selected peer-reviewed papers and preprints from the IAI-USTC Quantum AI Group</p>
+            <div class="hero-badges">
+                <img src="https://img.shields.io/badge/Quantum_Computing-AI-00e5ff?style=flat-square" alt="Quantum Computing">
+                <a href="https://iai-ustc-quantum.github.io"><img src="https://img.shields.io/badge/Page-iai--ustc--quantum.github.io-4D6AE4?style=flat-square" alt="GitHub Page"></a>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat">
+                <span class="stat-num" id="stat-papers">—</span>
+                <span class="stat-label" data-i18n="stat_papers">Papers</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat">
+                <span class="stat-num" id="stat-citations">—</span>
+                <span class="stat-label" data-i18n="stat_citations">Citations</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat">
+                <span class="stat-num" id="stat-years">—</span>
+                <span class="stat-label" data-i18n="stat_years">Years</span>
+            </div>
+        </div>
+
+        <!-- Papers list rendered here -->
+        <div id="papers-container"></div>
+
+        <footer>
+            <p data-i18n="footer">© 2021–2026 IAI-USTC-Quantum · <a href="https://github.com/IAI-USTC-Quantum">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="data/publications.js"></script>
+    <script>
+        /* ─── Shared canvas background ─── */
+        (function () {
+            const canvas = document.getElementById('bg');
+            const ctx = canvas.getContext('2d');
+            let W, H;
+            const nodes = [];
+            const MAX_NODES = 18;
+
+            function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+
+            function addNode() {
+                if (nodes.length >= MAX_NODES) return;
+                nodes.push({ x: Math.random()*W, y: Math.random()*H, vx: (Math.random()-0.5)*0.3, vy: (Math.random()-0.5)*0.3, r: Math.random()*1.5+0.5, life: 0, maxLife: Math.random()*300+150 });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                if (Math.random() < 0.08) addNode();
+                for (let i = 0; i < nodes.length; i++) {
+                    const a = nodes[i];
+                    a.x += a.vx; a.y += a.vy; a.life++;
+                    if (a.x < -10 || a.x > W+10 || a.y < -10 || a.y > H+10 || a.life > a.maxLife) { nodes.splice(i,1); i--; continue; }
+                    for (let j = i+1; j < nodes.length; j++) {
+                        const b = nodes[j];
+                        const dx = a.x-b.x, dy = a.y-b.y, dist = Math.sqrt(dx*dx+dy*dy);
+                        if (dist < 120) {
+                            ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+                            ctx.strokeStyle = `rgba(0,229,255,${0.12*(1-dist/120)})`;
+                            ctx.lineWidth = 0.5; ctx.stroke();
+                        }
+                    }
+                    ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, Math.PI*2);
+                    ctx.fillStyle = `rgba(0,229,255,${0.5*(1-a.life/a.maxLife)})`; ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+            resize(); window.addEventListener('resize', resize); draw();
+        })();
+
+        /* ─── Team member initials to highlight ─── */
+        const TEAM_AUTHORS = new Set([
+            'ZY Chen','ZY. Chen','ZY.chen',
+            'HY Liu','HY. Liu','HY.Liu',
+            'TP Sun','TP. Sun','TP.Sun',
+            'YJ Wang','YJ. Wang','YJ.Wang',
+            'XN Zhuang','XN. Zhuang','XN.Zhuang',
+            'C Xue','C. Xue','C.Xue',
+            'XF Xu','XF. Xu','XF.Xu',
+            'TY Ma','TY. Ma','TY.Ma',
+            'CC Ye','CC. Ye','CC.Ye',
+            'MH Dou','MH. Dou','MH.Dou',
+            'C Wang','C. Wang','C.Wang',
+            'GP Guo','GP. Guo','GP.Guo',
+            'YC Wu','YC. Wu','YC.Wu',
+            'S Qu','S. Qu','S.Qu',
+            'Q Zhou','Q. Zhou','Q.Zhou',
+        ]);
+
+        function highlightAuthors(authors) {
+            return authors.map(a => TEAM_AUTHORS.has(a) ? `<span class="team-author">${a}</span>` : a).join(', ');
+        }
+
+        /* ─── Render ─── */
+        function renderPapers() {
+            // Stats
+            const totalCitations = publications.reduce((s, p) => s + (p.citations || 0), 0);
+            const years = new Set(publications.map(p => p.year)).size;
+            document.getElementById('stat-papers').textContent = publications.length;
+            document.getElementById('stat-citations').textContent = totalCitations;
+            document.getElementById('stat-years').textContent = years;
+
+            // Group by year
+            const byYear = {};
+            publications.forEach(p => {
+                if (!byYear[p.year]) byYear[p.year] = [];
+                byYear[p.year].push(p);
+            });
+
+            const container = document.getElementById('papers-container');
+            const yearsSorted = Object.keys(byYear).sort((a, b) => b - a);
+
+            container.innerHTML = yearsSorted.map(year => `
+                <div class="year-group" style="animation-delay: ${(yearsSorted.indexOf(year) + 1) * 0.05}s">
+                    <div class="year-header">
+                        <span class="year-label">${year}</span>
+                        <div class="year-line"></div>
+                    </div>
+                    ${byYear[year].map(p => `
+                        <div class="paper-card">
+                            <div class="paper-meta">
+                                <span class="paper-year-badge">${p.year}</span>
+                                <span class="paper-venue">${p.venue}</span>
+                                ${p.citations ? `
+                                <span class="paper-citations">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h12"/></svg>
+                                    ${p.citations}
+                                </span>` : ''}
+                            </div>
+                            <p class="paper-title">${p.title}</p>
+                            <p class="paper-authors">${highlightAuthors(p.authors)}</p>
+                            <div class="paper-links">
+                                ${p.doi ? `<a href="https://doi.org/${p.doi}" class="paper-link doi" target="_blank" rel="noopener">
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                                    DOI
+                                </a>` : ''}
+                                ${p.arxiv ? `<a href="https://arxiv.org/abs/${p.arxiv}" class="paper-link arxiv" target="_blank" rel="noopener">
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                                    arXiv:${p.arxiv}
+                                </a>` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+
+        /* ─── Translations ─── */
+        const translations = {
+            en: {
+                nav_home: "Home",
+                nav_pub: "Publications",
+                pub_label: "§ Research Output",
+                pub_title: "Publications",
+                pub_sub: "Selected peer-reviewed papers and preprints from the IAI-USTC Quantum AI Group",
+                stat_papers: "Papers",
+                stat_citations: "Citations",
+                stat_years: "Years",
+                footer: "© 2021–2026 IAI-USTC-Quantum · GitHub"
+            },
+            zh: {
+                nav_home: "首页",
+                nav_pub: "发表论文",
+                pub_label: "§ 研究成果",
+                pub_title: "发表论文",
+                pub_sub: "合肥综合性国家科学中心人工智能研究院量子人工智能团队精选论文",
+                stat_papers: "论文",
+                stat_citations: "引用",
+                stat_years: "年份",
+                footer: "© 2021–2026 IAI-USTC-Quantum · GitHub"
+            }
+        };
+
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+            document.querySelectorAll('.nav-lang button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            localStorage.setItem('preferred-lang', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPapers();
+            const savedLang = localStorage.getItem('preferred-lang') || 'zh';
+            switchLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>

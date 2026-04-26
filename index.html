@@ -58,37 +58,6 @@
             background-size: 200px;
         }
 
-        /* ─── Language switcher ─── */
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            display: flex;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 4px;
-            backdrop-filter: blur(12px);
-        }
-
-        .lang-switch button {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            padding: 6px 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            transition: all 0.2s;
-        }
-
-        .lang-switch button:hover { color: var(--text); background: var(--surface-2); }
-        .lang-switch button.active { background: var(--cyan-dim); color: var(--cyan); }
-
         /* ─── Layout ─── */
         .container {
             position: relative;
@@ -100,7 +69,7 @@
 
         /* ─── Hero ─── */
         .hero {
-            padding: 120px 0 72px;
+            padding: 100px 0 72px;
             text-align: center;
             position: relative;
         }
@@ -585,11 +554,89 @@
         /* ─── Responsive ─── */
         @media (max-width: 600px) {
             .container { padding: 0 16px 60px; }
-            .hero { padding: 100px 0 56px; }
+            .hero { padding: 80px 0 56px; }
+            .top-nav { padding: 0 16px; }
+            .nav-logo { font-size: 0.72rem; }
+            .nav-link { font-size: 0.72rem; padding: 5px 10px; }
             .github-cta { flex-direction: column; align-items: flex-start; }
             .contact-row { flex-direction: column; align-items: flex-start; }
             .hero-badges { gap: 8px; }
         }
+
+        /* ─── Top Nav ─── */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            height: 56px;
+            background: rgba(6, 10, 18, 0.8);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .nav-logo:hover { color: var(--cyan); text-decoration: none; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            letter-spacing: 0.03em;
+        }
+
+        .nav-link:hover { color: var(--text); background: var(--surface); border-color: var(--border); text-decoration: none; }
+        .nav-link.active { color: var(--cyan); background: var(--cyan-dim); border-color: rgba(0, 229, 255, 0.2); }
+
+        .nav-lang {
+            display: flex;
+            gap: 4px;
+            margin-left: 16px;
+            padding-left: 16px;
+            border-left: 1px solid var(--border);
+        }
+
+        .nav-lang button {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-lang button:hover { color: var(--text); background: var(--surface); }
+        .nav-lang button.active { color: var(--cyan); }
 
         /* ─── Custom scrollbar ─── */
         ::-webkit-scrollbar { width: 6px; }
@@ -606,11 +653,18 @@
     <!-- Quantum circuit animated background -->
     <canvas class="bg-canvas" id="bg"></canvas>
 
-    <!-- Language switcher -->
-    <div class="lang-switch">
-        <button id="lang-en" onclick="switchLanguage('en')">EN</button>
-        <button id="lang-zh" onclick="switchLanguage('zh')">中文</button>
-    </div>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="index.html" class="nav-logo">IAI-USTC Quantum</a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a>
+            <a href="publications.html" class="nav-link" data-i18n="nav_pub">Publications</a>
+            <div class="nav-lang">
+                <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+                <button id="lang-zh" onclick="switchLanguage('zh')">中文</button>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
 
@@ -882,6 +936,8 @@
         /* ─── Translations ─── */
         const translations = {
             en: {
+                nav_home: "Home",
+                nav_pub: "Publications",
                 hero_index: "IAI-USTC · Quantum AI Group · 2021–2026",
                 title: "IAI-USTC",
                 title_accent: "Quantum",
@@ -908,6 +964,8 @@
                 footer: "© 2024 IAI-USTC-Quantum · Institute of Artificial Intelligence, Hefei Comprehensive National Science Center"
             },
             zh: {
+                nav_home: "首页",
+                nav_pub: "发表论文",
                 hero_index: "IAI-USTC · 量子人工智能团队 · 2021–2026",
                 title: "IAI-USTC",
                 title_accent: "Quantum",
