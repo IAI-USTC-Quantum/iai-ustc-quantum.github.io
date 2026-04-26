@@ -353,10 +353,11 @@
         }
 
         /* ─── Projects grid ─── */
+        /* ─── Projects grid ─── */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             margin-bottom: 64px;
         }
 
@@ -364,12 +365,14 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 14px;
-            padding: 24px;
+            padding: 22px 26px;
             text-decoration: none;
             color: var(--text);
-            transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
+            transition: border-color 0.25s, background 0.25s, transform 0.2s, box-shadow 0.25s;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
             opacity: 0;
             animation: fadeUp 0.5s ease forwards;
         }
@@ -377,54 +380,62 @@
         .project-card:nth-child(1) { animation-delay: 0.65s; }
         .project-card:nth-child(2) { animation-delay: 0.72s; }
         .project-card:nth-child(3) { animation-delay: 0.79s; }
+        .project-card:nth-child(4) { animation-delay: 0.86s; }
 
         .project-card:hover {
             border-color: var(--border-glow);
             background: var(--surface-2);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border-glow);
+            transform: translateX(4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--border-glow);
             text-decoration: none;
         }
 
-        .project-card-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 14px;
-        }
+        .project-card-left { flex: 1; min-width: 0; }
 
         .project-card h3 {
             font-size: 0.95rem;
             font-weight: 700;
-        }
-
-        .project-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 500;
-            padding: 3px 8px;
-            border-radius: 100px;
-            background: var(--cyan-dim);
-            color: var(--cyan);
-            border: 1px solid rgba(0, 229, 255, 0.15);
-            letter-spacing: 0.03em;
+            margin-bottom: 5px;
         }
 
         .project-card p {
             color: var(--text-muted);
-            font-size: 0.83rem;
-            line-height: 1.65;
-            flex: 1;
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        .project-card-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .proj-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 500;
+            padding: 3px 9px;
+            border-radius: 100px;
+            border: 1px solid;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
         }
 
         .project-card-footer {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--cyan);
+            opacity: 0.6;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-top: 18px;
-            padding-top: 14px;
-            border-top: 1px solid rgba(255,255,255,0.04);
+            gap: 4px;
+            transition: opacity 0.2s, gap 0.2s;
+            flex-shrink: 0;
+            margin-left: 8px;
         }
+
+        .project-card:hover .project-card-footer { opacity: 1; gap: 8px; }
 
         .project-link {
             font-family: 'JetBrains Mono', monospace;
@@ -802,25 +813,37 @@
             {
                 name: "QRAM-Simulator",
                 url: "https://iai-ustc-quantum.github.io/QRAM-Simulator/",
-                lang: "Python",
+                badges: [
+                    { label: "C++", color: "#f34b7d" },
+                    { label: "Python", color: "#3572A5" },
+                    { label: "Paper", color: "#b31b1b" },
+                ],
                 descriptionKey: "project1_desc",
             },
             {
                 name: "UnifiedQuantum",
                 url: "https://github.com/IAI-USTC-Quantum/UnifiedQuantum",
-                lang: "Python",
+                badges: [
+                    { label: "Python", color: "#3572A5" },
+                    { label: "C++", color: "#f34b7d" },
+                ],
                 descriptionKey: "project2_desc",
             },
             {
                 name: "QuantumQA",
                 url: "https://github.com/IAI-USTC-Quantum/QuantumQA",
-                lang: "Dataset",
+                badges: [
+                    { label: "Paper", color: "#b31b1b" },
+                    { label: "Dataset", color: "#e34c26" },
+                ],
                 descriptionKey: "project4_desc",
             },
             {
                 name: "quantum-computing-skill",
                 url: "https://github.com/IAI-USTC-Quantum/quantum-computing-skill",
-                lang: "Coding Agent",
+                badges: [
+                    { label: "Skill", color: "#8250df" },
+                ],
                 descriptionKey: "project3_desc",
             }
         ];
@@ -832,15 +855,18 @@
             const grid = document.getElementById('projects-grid');
             grid.innerHTML = projects.map(p => `
                 <a class="project-card" href="${p.url}" target="_blank" rel="noopener">
-                    <div class="project-card-top">
+                    <div class="project-card-left">
                         <h3>${p.name}</h3>
-                        <span class="project-tag">${p.lang}</span>
+                        <p data-i18n="${p.descriptionKey}">${translations.en[p.descriptionKey] || ''}</p>
                     </div>
-                    <p data-i18n="${p.descriptionKey}">${translations.en[p.descriptionKey] || ''}</p>
-                    <div class="project-card-footer">
-                        <span class="project-link" data-i18n="project_link">
+                    <div class="project-card-right">
+                        ${p.badges.map(b => `
+                            <span class="proj-badge" style="background:${b.color}18;color:${b.color};border-color:${b.color}35">
+                                ${b.label}
+                            </span>
+                        `).join('')}
+                        <span class="project-card-footer" data-i18n="project_link">
                             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>${translations.en.project_link || 'Open'}</span>
                         </span>
                     </div>
                 </a>
