@@ -36,7 +36,7 @@ const publications = [
         authors: ["J Zhang", "TH Wei", "XN Zhuang", "ZY Chen", "WC Kong", "YC Wu", "GP Guo"],
         venue: "Physical Review Letters 136, 080603",
         citations: 1,
-        doi: "10.1103/PhysRevLett.136.080603"
+        doi: "10.1103/mjsj-hxyj"
     },
     {
         year: 2026,
