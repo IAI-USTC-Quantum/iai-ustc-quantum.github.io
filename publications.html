@@ -202,45 +202,6 @@
 
         .hero-badges img { height: 20px; border-radius: 3px; }
 
-        /* ─── Stats row ─── */
-        .stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px 0 56px;
-            opacity: 0;
-            animation: fadeUp 0.6s 0.35s ease forwards;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-num {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--cyan);
-            display: block;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.68rem;
-            color: var(--text-dim);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-top: 6px;
-            display: block;
-        }
-
-        .stat-sep {
-            width: 1px;
-            background: var(--border);
-            align-self: stretch;
-        }
-
         /* ─── Year group ─── */
         .year-group {
             margin-bottom: 56px;
@@ -461,32 +422,13 @@
 
     <div class="container">
         <section class="page-hero">
-            <p class="page-hero-label" data-i18n="pub_label">Research Output</p>
+            <p class="page-hero-label" data-i18n="pub_label">§ Research Output</p>
             <h1 data-i18n="pub_title">Publications</h1>
-            <p data-i18n="pub_sub">Selected peer-reviewed papers and preprints from the IAI-USTC Quantum AI Group</p>
             <div class="hero-badges">
                 <img src="https://img.shields.io/badge/Quantum_Computing-AI-00e5ff?style=flat-square" alt="Quantum Computing">
                 <a href="https://iai-ustc-quantum.github.io"><img src="https://img.shields.io/badge/Page-iai--ustc--quantum.github.io-4D6AE4?style=flat-square" alt="GitHub Page"></a>
             </div>
         </section>
-
-        <!-- Stats -->
-        <div class="stats-row">
-            <div class="stat">
-                <span class="stat-num" id="stat-papers">—</span>
-                <span class="stat-label" data-i18n="stat_papers">Papers</span>
-            </div>
-            <div class="stat-sep"></div>
-            <div class="stat">
-                <span class="stat-num" id="stat-citations">—</span>
-                <span class="stat-label" data-i18n="stat_citations">Citations</span>
-            </div>
-            <div class="stat-sep"></div>
-            <div class="stat">
-                <span class="stat-num" id="stat-years">—</span>
-                <span class="stat-label" data-i18n="stat_years">Years</span>
-            </div>
-        </div>
 
         <!-- Papers list rendered here -->
         <div id="papers-container"></div>
@@ -537,39 +479,8 @@
             resize(); window.addEventListener('resize', resize); draw();
         })();
 
-        /* ─── Team member initials to highlight ─── */
-        const TEAM_AUTHORS = new Set([
-            'ZY Chen','ZY. Chen','ZY.chen',
-            'HY Liu','HY. Liu','HY.Liu',
-            'TP Sun','TP. Sun','TP.Sun',
-            'YJ Wang','YJ. Wang','YJ.Wang',
-            'XN Zhuang','XN. Zhuang','XN.Zhuang',
-            'C Xue','C. Xue','C.Xue',
-            'XF Xu','XF. Xu','XF.Xu',
-            'TY Ma','TY. Ma','TY.Ma',
-            'CC Ye','CC. Ye','CC.Ye',
-            'MH Dou','MH. Dou','MH.Dou',
-            'C Wang','C. Wang','C.Wang',
-            'GP Guo','GP. Guo','GP.Guo',
-            'YC Wu','YC. Wu','YC.Wu',
-            'S Qu','S. Qu','S.Qu',
-            'Q Zhou','Q. Zhou','Q.Zhou',
-        ]);
-
-        function highlightAuthors(authors) {
-            return authors.map(a => TEAM_AUTHORS.has(a) ? `<span class="team-author">${a}</span>` : a).join(', ');
-        }
-
         /* ─── Render ─── */
         function renderPapers() {
-            // Stats
-            const totalCitations = publications.reduce((s, p) => s + (p.citations || 0), 0);
-            const years = new Set(publications.map(p => p.year)).size;
-            document.getElementById('stat-papers').textContent = publications.length;
-            document.getElementById('stat-citations').textContent = totalCitations;
-            document.getElementById('stat-years').textContent = years;
-
-            // Group by year
             const byYear = {};
             publications.forEach(p => {
                 if (!byYear[p.year]) byYear[p.year] = [];
@@ -588,24 +499,14 @@
                     ${byYear[year].map(p => `
                         <div class="paper-card">
                             <div class="paper-meta">
-                                <span class="paper-year-badge">${p.year}</span>
                                 <span class="paper-venue">${p.venue}</span>
-                                ${p.citations ? `
-                                <span class="paper-citations">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h12"/></svg>
-                                    ${p.citations}
-                                </span>` : ''}
                             </div>
                             <p class="paper-title">${p.title}</p>
-                            <p class="paper-authors">${highlightAuthors(p.authors)}</p>
+                            <p class="paper-authors">${p.authors.join(', ')}</p>
                             <div class="paper-links">
                                 ${p.doi ? `<a href="https://doi.org/${p.doi}" class="paper-link doi" target="_blank" rel="noopener">
                                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
                                     DOI
-                                </a>` : ''}
-                                ${p.arxiv ? `<a href="https://arxiv.org/abs/${p.arxiv}" class="paper-link arxiv" target="_blank" rel="noopener">
-                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 5h8M5 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                                    arXiv:${p.arxiv}
                                 </a>` : ''}
                             </div>
                         </div>
@@ -621,22 +522,14 @@
                 nav_pub: "Publications",
                 pub_label: "§ Research Output",
                 pub_title: "Publications",
-                pub_sub: "Selected peer-reviewed papers and preprints from the IAI-USTC Quantum AI Group",
-                stat_papers: "Papers",
-                stat_citations: "Citations",
-                stat_years: "Years",
-                footer: "© 2021–2026 IAI-USTC-Quantum · GitHub"
+                footer: "© 2021–2026 IAI-USTC-Quantum · <a href=\"https://github.com/IAI-USTC-Quantum\">GitHub</a>"
             },
             zh: {
                 nav_home: "首页",
                 nav_pub: "发表论文",
                 pub_label: "§ 研究成果",
                 pub_title: "发表论文",
-                pub_sub: "合肥综合性国家科学中心人工智能研究院量子人工智能团队精选论文",
-                stat_papers: "论文",
-                stat_citations: "引用",
-                stat_years: "年份",
-                footer: "© 2021–2026 IAI-USTC-Quantum · GitHub"
+                footer: "© 2021–2026 IAI-USTC-Quantum · <a href=\"https://github.com/IAI-USTC-Quantum\">GitHub</a>"
             }
         };
 

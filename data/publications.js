@@ -1,7 +1,7 @@
 // ─── Publication data ───
-// Add new entries to the top of the `publications` array.
-// Fields: year (number), title, authors, venue, citations (number), doi (string, optional), arxiv (string, optional)
-// doi/arXiv: include whichever exists. Leave undefined if not available.
+// Add new entries to the top of the array.
+// Fields: year, title, authors[], venue, citations, doi
+// Only include papers with a DOI (published / peer-reviewed venues preferred).
 
 const publications = [
 
@@ -34,7 +34,7 @@ const publications = [
         year: 2026,
         title: "Statistics-informed parameterized quantum circuit: towards practical quantum state preparation and learning via maximum entropy principle",
         authors: ["XN Zhuang", "ZY Chen", "C Xue", "XF Xu", "C Wang", "HY Liu", "MY Tan", "TP Sun"],
-        venue: "npj Quantum Information 12, 2026",
+        venue: "npj Quantum Information 12",
         citations: 0,
         doi: "10.1038/s41534-026-2026"
     },
@@ -116,14 +116,6 @@ const publications = [
         citations: 13,
         doi: "10.22331/q-2023-1127"
     },
-    {
-        year: 2023,
-        title: "Can variational quantum algorithms demonstrate quantum advantages? Time really matters",
-        authors: ["HY Liu", "ZY Chen", "TP Sun", "C Xue", "YC Wu", "GP Guo"],
-        venue: "arXiv:2307.04089",
-        citations: 8,
-        arxiv: "2307.04089"
-    },
 
     // ── 2022 ──
     {
@@ -159,16 +151,6 @@ const publications = [
         venue: "Scientific Reports 11, 355",
         citations: 32,
         doi: "10.1038/s41598-020-79452-2"
-    },
-
-    // ── 2019 ──
-    {
-        year: 2019,
-        title: "VQNet: Library for a quantum-classical hybrid neural network",
-        authors: ["ZY Chen", "C Xue", "SM Chen", "GP Guo"],
-        venue: "arXiv:1901.09133",
-        citations: 12,
-        arxiv: "1901.09133"
     },
 
     // ── 2018 ──
