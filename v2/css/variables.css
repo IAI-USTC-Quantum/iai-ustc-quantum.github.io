@@ -1,0 +1,46 @@
+:root {
+    /* Colors */
+    --color-bg: #FAFAF7;
+    --color-bg-alt: #F3F2EE;
+    --color-bg-card: #FFFFFF;
+    --color-border: #E0DED8;
+    --color-border-light: #ECEAE4;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #555555;
+    --color-text-muted: #888888;
+    --color-accent: #1B3A4B;
+    --color-accent-light: #E8EFF3;
+    --color-rule: #D4D1C9;
+
+    /* Typography */
+    --font-heading: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
+    --font-body: 'Source Serif 4', 'Noto Serif SC', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Type scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.75rem;
+    --text-5xl: 3.5rem;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+
+    /* Layout */
+    --content-width: 780px;
+    --content-padding: 24px;
+    --border-radius: 2px;
+}
