@@ -1,6 +1,46 @@
 const publications = [
     {
         year: 2026,
+        title: "SparQSim: An Efficient Quantum Algorithm Simulator Leveraging State Sparsity",
+        authors: ["TP Sun", "YJ Wang", "ZY Chen", "C Xue", "HY Liu", "XN Zhuang", "XF Xu", "YC Wu", "GP Guo"],
+        venue: "Chinese Physics B, 2026",
+        citations: 3,
+        arxiv: "2504.02455"
+    },
+    {
+        year: 2026,
+        title: "Experimental robustness benchmarking of quantum neural networks on a superconducting quantum processor",
+        authors: ["HF Zhang", "ZY Chen", "P Wang", "LL Guo", "TL Wang", "XY Yang", "RZ Zhao", "YC Wu", "GP Guo"],
+        venue: "Science China Physics, Mechanics & Astronomy 69 (6), 260315",
+        citations: 0,
+        arxiv: "2505.16714"
+    },
+    {
+        year: 2026,
+        title: "Compressed representation of quantum states via orthogonal polynomials for flow field analysis",
+        authors: ["Y Fang", "C Xue", "TP Sun", "XF Xu", "CC Ye", "TY Ma", "HY Liu", "YC Wu", "ZY Chen", "GP Guo"],
+        venue: "Acta Mechanica Sinica 42 (6), 725683",
+        citations: 2,
+        arxiv: "2509.08807"
+    },
+    {
+        year: 2026,
+        title: "A Unified Poisson Summation Framework for Generalized Quantum Matrix Transformations",
+        authors: ["C Wang", "XN Zhuang", "MH Dou", "ZY Chen", "GP Guo"],
+        venue: "arXiv:2604.02874",
+        citations: 1,
+        arxiv: "2604.02874"
+    },
+    {
+        year: 2026,
+        title: "Quantum Deep Learning: A Comprehensive Review",
+        authors: ["Y Ji", "ZY Chen", "M Roth", "DA Kreplin", "C Schiffer", "M King", "O Anton", "MS Alam", "GP Guo"],
+        venue: "arXiv:2603.06644",
+        citations: 0,
+        arxiv: "2603.06644"
+    },
+    {
+        year: 2026,
         title: "Refined Criteria for Quantum Random-Access Memory Error Suppression via an Efficient Large-Scale Simulator",
         authors: ["YJ Wang", "TP Sun", "XN Zhuang", "XF Xu", "HY Liu", "C Xue", "YC Wu", "ZY Chen", "GP Guo"],
         venue: "Physical Review Applied 25, 044069",
@@ -57,6 +97,38 @@ const publications = [
     },
     {
         year: 2025,
+        title: "Quantum-enhanced LLM efficient fine tuning",
+        authors: ["X Kong", "L Li", "ZY Chen", "C Xue", "XF Xu", "HY Liu", "YC Wu", "Y Fang", "H Fang", "K Chen", "GP Guo"],
+        venue: "arXiv:2503.12790",
+        citations: 18,
+        arxiv: "2503.12790"
+    },
+    {
+        year: 2025,
+        title: "Demonstrating Coherent Quantum Routers for Bucket-Brigade Quantum Random Access Memory on a Superconducting Processor",
+        authors: ["S Zhang", "YJ Wang", "P Wang", "RZ Zhao", "XY Yang", "ZA Zhao", "TL Wang", "ZY Chen", "P Duan", "YC Wu", "GP Guo"],
+        venue: "arXiv:2505.13958",
+        citations: 5,
+        arxiv: "2505.13958"
+    },
+    {
+        year: 2025,
+        title: "Quantum computational insurance and actuarial science",
+        authors: ["HY Liu", "XN Zhuang", "C Wang", "QS Li", "MH Dou", "ZY Chen", "C Xue", "YC Wu", "GP Guo"],
+        venue: "Science China Information Sciences 68 (10), 1-15",
+        citations: 2,
+        doi: "10.1007/s11432-024-4475-4"
+    },
+    {
+        year: 2025,
+        title: "A Pathway to Practical Quantum Advantage in Solving Navier-Stokes Equations",
+        authors: ["XN Zhuang", "ZY Chen", "MY Tan", "J Zhang", "CC Ye", "TH Wei", "TY Ma", "C Xue", "XF Xu", "YC Wu", "GP Guo"],
+        venue: "arXiv:2509.08807",
+        citations: 3,
+        arxiv: "2509.08807"
+    },
+    {
+        year: 2025,
         title: "Demonstrating a universal logical gate set in error-detecting surface codes on a superconducting quantum processor",
         authors: ["J Zhang", "ZY Chen", "YJ Wang", "BH Lu", "HF Zhang", "JN Li", "P Duan", "YC Wu"],
         venue: "npj Quantum Information 11, 177",
@@ -110,6 +182,14 @@ const publications = [
         venue: "Advanced Quantum Technologies 3, 2400519",
         citations: 0,
         doi: "10.1002/qute.202400519"
+    },
+    {
+        year: 2024,
+        title: "End-to-end quantum vision transformer: towards practical quantum speedup in large-scale models",
+        authors: ["C Xue", "ZY Chen", "XN Zhuang", "YJ Wang", "TP Sun", "JC Wang", "HY Liu", "YC Wu", "GP Guo"],
+        venue: "arXiv:2402.18940",
+        citations: 12,
+        arxiv: "2402.18940"
     },
     {
         year: 2024,
@@ -190,6 +270,22 @@ const publications = [
         venue: "Physical Review A 112 (5), 052438",
         citations: 0,
         doi: "10.1103/PhysRevA.112.052438"
+    },
+    {
+        year: 2022,
+        title: "QPanda: high-performance quantum computing framework for multiple application scenarios",
+        authors: ["MH Dou", "TR Zou", "Y Fang", "J Wang", "D Zhao", "L Yu", "B Chen", "W Guo", "Y Li", "ZY Chen", "YC Wu", "GP Guo"],
+        venue: "arXiv:2212.14201",
+        citations: 40,
+        arxiv: "2212.14201"
+    },
+    {
+        year: 2022,
+        title: "Variational oracle guiding for reinforcement learning",
+        authors: ["D Han", "T Kozuno", "X Luo", "ZY Chen", "K Doya", "Y Yang", "D Li"],
+        venue: "International Conference on Learning Representations (ICLR), 2022",
+        citations: 12,
+        arxiv: "2201.01333"
     },
     {
         year: 2022,
