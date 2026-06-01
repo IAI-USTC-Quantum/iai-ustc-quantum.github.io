@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications — IAI-USTC Quantum</title>
+    <title>Research Directions — IAI-USTC Quantum</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/typography.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/publications.css">
+    <link rel="stylesheet" href="css/research.css">
 </head>
 <body>
 
@@ -18,8 +18,8 @@
             <a href="index.html" class="nav-brand">IAI-USTC Quantum</a>
             <div class="nav-right">
                 <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
-                <a href="research.html" class="nav-link" data-i18n="nav_research">Research</a>
-                <a href="publications.html" class="nav-link active" data-i18n="nav_pub">Publications</a>
+                <a href="research.html" class="nav-link active" data-i18n="nav_research">Research</a>
+                <a href="publications.html" class="nav-link" data-i18n="nav_pub">Publications</a>
                 <div class="nav-lang">
                     <button id="lang-en" onclick="switchLanguage('en')" data-i18n="lang_en">EN</button>
                     <button id="lang-zh" onclick="switchLanguage('zh')" data-i18n="lang_zh">中文</button>
@@ -31,12 +31,16 @@
     <div class="container">
 
         <!-- Page Header -->
-        <section class="pub-header">
-            <h1 data-i18n="pub_heading">Publications</h1>
-            <p class="pub-description" data-i18n="pub_description">Peer-reviewed research from our group</p>
+        <section class="research-header">
+            <h1 data-i18n="rd_heading">Research Directions</h1>
+            <p class="research-description" data-i18n="rd_description">Our key areas of focus in quantum computing</p>
         </section>
 
-        <div id="papers-container"></div>
+        <!-- Tabs -->
+        <div class="research-tabs" id="research-tabs"></div>
+
+        <!-- Content -->
+        <div class="research-content" id="research-content"></div>
 
     </div>
 
@@ -48,8 +52,8 @@
     </footer>
 
     <script src="js/i18n.js"></script>
-    <script src="js/publications.js"></script>
+    <script src="js/research.js"></script>
     <script src="js/shared.js"></script>
-    <script src="js/publications-page.js"></script>
+    <script src="js/research-page.js"></script>
 </body>
 </html>

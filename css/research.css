@@ -1,0 +1,124 @@
+/* Research Directions page */
+
+.research-header {
+    padding: var(--spacing-12) 0 var(--spacing-8);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--spacing-8);
+}
+
+.research-header h1 {
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-3);
+}
+
+.research-description {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+}
+
+/* Tabs */
+.research-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--spacing-8);
+    overflow-x: auto;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: var(--spacing-3) var(--spacing-5);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    color: var(--text-primary);
+}
+
+.tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* Direction panel */
+.direction-panel {
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.direction-desc {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: var(--content-width);
+    margin-bottom: var(--spacing-8);
+}
+
+.featured-heading {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-5);
+    font-family: var(--font-heading);
+}
+
+/* Featured papers */
+.featured-papers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    padding-bottom: var(--spacing-16);
+}
+
+.featured-paper-card {
+    padding: var(--spacing-5);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.15s ease;
+}
+
+.featured-paper-card:hover {
+    border-color: var(--accent);
+}
+
+.featured-venue {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: var(--spacing-2);
+}
+
+.featured-paper-card .paper-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: var(--spacing-2);
+}
+
+.featured-paper-card .paper-title:hover {
+    color: var(--accent);
+}
+
+.featured-authors {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.6;
+}
