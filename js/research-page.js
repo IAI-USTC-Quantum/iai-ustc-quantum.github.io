@@ -25,32 +25,25 @@ function formatPubDate(dateStr) {
     return months[parseInt(m, 10) - 1] + ' ' + y;
 }
 
-function renderDirectionsTOC(lang) {
-    const label = t('rd_toc_label', lang);
-    const items = researchDirections.map((dir, i) => {
-        const num = pad2(i + 1);
-        const title = escapeHtml(t(dir.titleKey, lang));
-        const tagline = escapeHtml(t(dir.taglineKey, lang));
-        return `
-            <li class="toc-item-wrap">
-                <a class="toc-item" href="#${dir.id}">
-                    <span class="toc-num">${num}</span>
-                    <span class="toc-text">
-                        <span class="toc-title">${title}</span>
-                        <span class="toc-tagline">${tagline}</span>
-                    </span>
-                    <span class="toc-arrow" aria-hidden="true">↓</span>
-                </a>
-            </li>
-        `;
-    }).join('');
+function toggleAccordion(btn) {
+    const item = btn.closest('.accordion-item');
+    const body = item.querySelector('.accordion-body');
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-    return `
-        <nav class="directions-toc-block" aria-label="${escapeHtml(label)}">
-            <p class="section-label">${escapeHtml(label)}</p>
-            <ul class="directions-toc">${items}</ul>
-        </nav>
-    `;
+    document.querySelectorAll('.accordion-item').forEach(other => {
+        if (other !== item) {
+            other.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+            other.querySelector('.accordion-body').classList.remove('open');
+        }
+    });
+
+    if (isOpen) {
+        btn.setAttribute('aria-expanded', 'false');
+        body.classList.remove('open');
+    } else {
+        btn.setAttribute('aria-expanded', 'true');
+        body.classList.add('open');
+    }
 }
 
 function renderFeaturedPaper(paper, lang) {
@@ -153,12 +146,41 @@ function renderAll() {
     if (!root) return;
     const lang = currentLang();
 
+    const label = t('rd_toc_label', lang);
+
+    const items = researchDirections.map((dir, i) => {
+        const num = pad2(i + 1);
+        const title = escapeHtml(t(dir.titleKey, lang));
+        const tagline = escapeHtml(t(dir.taglineKey, lang));
+        const bodyContent = renderDirectionSection(dir, i, lang);
+
+        return `
+            <li class="accordion-item">
+                <button class="accordion-header toc-item" aria-expanded="false">
+                    <span class="toc-num">${num}</span>
+                    <span class="toc-text">
+                        <span class="toc-title">${title}</span>
+                        <span class="toc-tagline">${tagline}</span>
+                    </span>
+                    <span class="toc-arrow" aria-hidden="true">▸</span>
+                </button>
+                <div class="accordion-body">
+                    ${bodyContent}
+                </div>
+            </li>
+        `;
+    }).join('');
+
     root.innerHTML = `
-        ${renderDirectionsTOC(lang)}
-        <div class="directions-stack">
-            ${researchDirections.map((dir, i) => renderDirectionSection(dir, i, lang)).join('')}
-        </div>
+        <nav class="directions-toc-block" aria-label="${escapeHtml(label)}">
+            <p class="section-label">${escapeHtml(label)}</p>
+            <ul class="directions-toc">${items}</ul>
+        </nav>
     `;
+
+    root.querySelectorAll('.accordion-header').forEach(btn => {
+        btn.addEventListener('click', () => toggleAccordion(btn));
+    });
 }
 
 document.addEventListener('DOMContentLoaded', renderAll);
