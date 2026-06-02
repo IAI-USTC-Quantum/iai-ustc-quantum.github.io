@@ -1,31 +1,25 @@
 const researchDirections = [
     {
-        id: "quantum-simulation",
-        titleKey: "rd_sim_title",
-        taglineKey: "rd_sim_tagline",
-        descKey: "rd_sim_desc",
+        id: "quantum-scicomp",
+        titleKey: "rd_sci_title",
+        taglineKey: "rd_sci_tagline",
+        descKey: "rd_sci_desc",
         themeKeys: [
-            "rd_sim_theme_1",
-            "rd_sim_theme_2",
-            "rd_sim_theme_3",
-            "rd_sim_theme_4"
+            "rd_sci_theme_1",
+            "rd_sci_theme_2",
+            "rd_sci_theme_3",
+            "rd_sci_theme_4",
+            "rd_sci_theme_5",
+            "rd_sci_theme_6"
         ],
         featured: [
             {
-                title: "Enabling large-scale and high-precision fluid simulations on near-term quantum computers",
-                authors: ["ZY Chen", "TY Ma", "CC Ye", "L Xu", "W Bai", "L Zhou", "MY Tan", "XN Zhuang", "XF Xu"],
-                venue: "Computer Methods in Applied Mechanics and Engineering 432, 117428",
-                doi: "10.1016/j.cma.2024.117428",
-                pubDate: "2024-10",
-                summaryKey: "rd_sim_p1_summary"
-            },
-            {
-                title: "A hybrid quantum-classical framework for computational fluid dynamics",
-                authors: ["CC Ye", "NB An", "TY Ma", "MH Dou", "W Bai", "DJ Sun", "ZY Chen", "GP Guo"],
-                venue: "Physics of Fluids 36, 12",
-                doi: "10.1063/5.0234511",
-                pubDate: "2024-12",
-                summaryKey: "rd_sim_p2_summary"
+                title: "A Unified Poisson Summation Framework for Generalized Quantum Matrix Transformations",
+                authors: ["C Wang", "XN Zhuang", "MH Dou", "ZY Chen", "GP Guo"],
+                venue: "arXiv:2604.02874",
+                arxiv: "2604.02874",
+                pubDate: "2026-04",
+                summaryKey: "rd_sci_p1_summary"
             },
             {
                 title: "Simulation of open quantum systems on universal quantum computers",
@@ -33,7 +27,47 @@ const researchDirections = [
                 venue: "Quantum 9, 1765",
                 doi: "10.22331/q-2025-1765",
                 pubDate: "2025-10",
-                summaryKey: "rd_sim_p3_summary"
+                summaryKey: "rd_sci_p2_summary"
+            },
+            {
+                title: "A hybrid quantum-classical framework for computational fluid dynamics",
+                authors: ["CC Ye", "NB An", "TY Ma", "MH Dou", "W Bai", "DJ Sun", "ZY Chen", "GP Guo"],
+                venue: "Physics of Fluids 36, 12",
+                doi: "10.1063/5.0234511",
+                pubDate: "2024-12",
+                summaryKey: "rd_sci_p3_summary"
+            },
+            {
+                title: "Enabling large-scale and high-precision fluid simulations on near-term quantum computers",
+                authors: ["ZY Chen", "TY Ma", "CC Ye", "L Xu", "W Bai", "L Zhou", "MY Tan", "XN Zhuang", "XF Xu"],
+                venue: "Computer Methods in Applied Mechanics and Engineering 432, 117428",
+                doi: "10.1016/j.cma.2024.117428",
+                pubDate: "2024-10",
+                summaryKey: "rd_sci_p4_summary"
+            },
+            {
+                title: "Quantum Encoding and Analysis on Continuous Time Stochastic Process with Financial Applications",
+                authors: ["XN Zhuang", "ZY Chen", "C Xue", "YC Wu", "GP Guo"],
+                venue: "Quantum 7, 1127",
+                doi: "10.22331/q-2023-1127",
+                pubDate: "2023-10",
+                summaryKey: "rd_sci_p5_summary"
+            },
+            {
+                title: "An improved QFT-based quantum comparator and extended modular arithmetic using one ancilla qubit",
+                authors: ["Y Yuan", "C Wang", "B Wang", "ZY Chen", "MH Dou", "YC Wu", "GP Guo"],
+                venue: "New Journal of Physics 25, 103011",
+                doi: "10.1088/1367-2630/ad09e5",
+                pubDate: "2023-10",
+                summaryKey: "rd_sci_p6_summary"
+            },
+            {
+                title: "Quantum computational quantitative trading: high-frequency statistical arbitrage algorithm",
+                authors: ["XN Zhuang", "ZY Chen", "YC Wu", "GP Guo"],
+                venue: "New Journal of Physics 24, 073036",
+                doi: "10.1088/1367-2630/ac8662",
+                pubDate: "2022-07",
+                summaryKey: "rd_sci_p7_summary"
             },
             {
                 title: "Quantum approach to accelerate finite volume method on steady computational fluid dynamics problems",
@@ -41,7 +75,7 @@ const researchDirections = [
                 venue: "Quantum Information Processing 21, 137",
                 doi: "10.1007/s11128-022-03603-3",
                 pubDate: "2022-04",
-                summaryKey: "rd_sim_p4_summary"
+                summaryKey: "rd_sci_p8_summary"
             }
         ]
     },
@@ -180,52 +214,6 @@ const researchDirections = [
                 doi: "10.1109/TCAD.2024.3507580",
                 pubDate: "2025-01",
                 summaryKey: "rd_ec_p4_summary"
-            }
-        ]
-    },
-    {
-        id: "quantum-algorithms",
-        titleKey: "rd_algo_title",
-        taglineKey: "rd_algo_tagline",
-        descKey: "rd_algo_desc",
-        themeKeys: [
-            "rd_algo_theme_1",
-            "rd_algo_theme_2",
-            "rd_algo_theme_3",
-            "rd_algo_theme_4"
-        ],
-        featured: [
-            {
-                title: "Quantum computational quantitative trading: high-frequency statistical arbitrage algorithm",
-                authors: ["XN Zhuang", "ZY Chen", "YC Wu", "GP Guo"],
-                venue: "New Journal of Physics 24, 073036",
-                doi: "10.1088/1367-2630/ac8662",
-                pubDate: "2022-07",
-                summaryKey: "rd_algo_p1_summary"
-            },
-            {
-                title: "Quantum Encoding and Analysis on Continuous Time Stochastic Process with Financial Applications",
-                authors: ["XN Zhuang", "ZY Chen", "C Xue", "YC Wu", "GP Guo"],
-                venue: "Quantum 7, 1127",
-                doi: "10.22331/q-2023-1127",
-                pubDate: "2023-10",
-                summaryKey: "rd_algo_p2_summary"
-            },
-            {
-                title: "A Unified Poisson Summation Framework for Generalized Quantum Matrix Transformations",
-                authors: ["C Wang", "XN Zhuang", "MH Dou", "ZY Chen", "GP Guo"],
-                venue: "arXiv:2604.02874",
-                arxiv: "2604.02874",
-                pubDate: "2026-04",
-                summaryKey: "rd_algo_p3_summary"
-            },
-            {
-                title: "An improved QFT-based quantum comparator and extended modular arithmetic using one ancilla qubit",
-                authors: ["Y Yuan", "C Wang", "B Wang", "ZY Chen", "MH Dou", "YC Wu", "GP Guo"],
-                venue: "New Journal of Physics 25, 103011",
-                doi: "10.1088/1367-2630/ad09e5",
-                pubDate: "2023-10",
-                summaryKey: "rd_algo_p4_summary"
             }
         ]
     }

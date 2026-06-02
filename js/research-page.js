@@ -1,5 +1,3 @@
-var _activeDirection = 0;
-
 function t(key, lang) {
     return (translations[lang] && translations[lang][key])
         || translations.en[key]
@@ -20,34 +18,39 @@ function escapeHtml(str) {
     }[c]));
 }
 
-function renderResearchTabs() {
-    const tabs = document.getElementById('research-tabs');
-    if (!tabs) return;
-
-    const lang = currentLang();
-    tabs.innerHTML = researchDirections.map((dir, i) => {
-        const title = t(dir.titleKey, lang);
-        const num = pad2(i + 1);
-        return `<button class="tab-btn${i === 0 ? ' active' : ''}" data-idx="${i}" data-i18n="${dir.titleKey}">
-            <span class="tab-num">${num}</span>
-            <span class="tab-label">${escapeHtml(title)}</span>
-        </button>`;
-    }).join('');
-
-    tabs.addEventListener('click', (e) => {
-        const btn = e.target.closest('.tab-btn');
-        if (!btn) return;
-        const idx = parseInt(btn.dataset.idx, 10);
-        if (!Number.isFinite(idx)) return;
-        showDirection(idx);
-    });
-}
-
 function formatPubDate(dateStr) {
     if (!dateStr) return '';
     const [y, m] = dateStr.split('-');
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return months[parseInt(m, 10) - 1] + ' ' + y;
+}
+
+function renderDirectionsTOC(lang) {
+    const label = t('rd_toc_label', lang);
+    const items = researchDirections.map((dir, i) => {
+        const num = pad2(i + 1);
+        const title = escapeHtml(t(dir.titleKey, lang));
+        const tagline = escapeHtml(t(dir.taglineKey, lang));
+        return `
+            <li class="toc-item-wrap">
+                <a class="toc-item" href="#${dir.id}">
+                    <span class="toc-num">${num}</span>
+                    <span class="toc-text">
+                        <span class="toc-title">${title}</span>
+                        <span class="toc-tagline">${tagline}</span>
+                    </span>
+                    <span class="toc-arrow" aria-hidden="true">↓</span>
+                </a>
+            </li>
+        `;
+    }).join('');
+
+    return `
+        <nav class="directions-toc-block" aria-label="${escapeHtml(label)}">
+            <p class="section-label">${escapeHtml(label)}</p>
+            <ul class="directions-toc">${items}</ul>
+        </nav>
+    `;
 }
 
 function renderFeaturedPaper(paper, lang) {
@@ -92,35 +95,23 @@ function renderFeaturedPaper(paper, lang) {
     `;
 }
 
-function showDirection(idx) {
-    _activeDirection = idx;
-
-    document.querySelectorAll('.tab-btn').forEach((b, i) => {
-        b.classList.toggle('active', i === idx);
-    });
-
-    const content = document.getElementById('research-content');
-    if (!content) return;
-
-    const dir = researchDirections[idx];
-    const lang = currentLang();
-
-    const title = t(dir.titleKey, lang);
-    const tagline = t(dir.taglineKey, lang);
-    const desc = t(dir.descKey, lang);
+function renderDirectionSection(dir, idx, lang) {
+    const title = escapeHtml(t(dir.titleKey, lang));
+    const tagline = escapeHtml(t(dir.taglineKey, lang));
+    const desc = escapeHtml(t(dir.descKey, lang));
     const themes = (dir.themeKeys || []).map(k => t(k, lang));
 
-    const eyebrowLabel = t('rd_eyebrow_label', lang);
-    const overviewLabel = t('rd_overview_label', lang);
-    const themesLabel = t('rd_themes_label', lang);
-    const featuredLabel = t('rd_featured', lang);
+    const eyebrowLabel = escapeHtml(t('rd_eyebrow_label', lang));
+    const overviewLabel = escapeHtml(t('rd_overview_label', lang));
+    const themesLabel = escapeHtml(t('rd_themes_label', lang));
+    const featuredLabel = escapeHtml(t('rd_featured', lang));
 
     const indexLabel = `${pad2(idx + 1)} / ${pad2(researchDirections.length)}`;
 
     const themesHtml = themes.length
         ? `
             <section class="direction-section">
-                <p class="section-label">${escapeHtml(themesLabel)}</p>
+                <p class="section-label">${themesLabel}</p>
                 <ul class="themes-list">
                     ${themes.map(theme => `<li class="theme-pill">${escapeHtml(theme)}</li>`).join('')}
                 </ul>
@@ -128,40 +119,47 @@ function showDirection(idx) {
         `
         : '';
 
-    content.innerHTML = `
-        <article class="direction-panel">
+    return `
+        <section class="direction-panel" id="${dir.id}">
             <header class="direction-header">
                 <p class="section-label direction-eyebrow">
-                    <span class="direction-eyebrow-label">${escapeHtml(eyebrowLabel)}</span>
+                    <span class="direction-eyebrow-label">${eyebrowLabel}</span>
                     <span class="direction-eyebrow-divider">·</span>
                     <span class="direction-eyebrow-index">${indexLabel}</span>
                 </p>
-                <h2 class="direction-title" data-i18n="${dir.titleKey}">${escapeHtml(title)}</h2>
-                <p class="direction-tagline">${escapeHtml(tagline)}</p>
+                <h2 class="direction-title" data-i18n="${dir.titleKey}">${title}</h2>
+                <p class="direction-tagline">${tagline}</p>
             </header>
 
             <section class="direction-section">
-                <p class="section-label">${escapeHtml(overviewLabel)}</p>
-                <p class="direction-desc">${escapeHtml(desc)}</p>
+                <p class="section-label">${overviewLabel}</p>
+                <p class="direction-desc">${desc}</p>
             </section>
 
             ${themesHtml}
 
             <section class="direction-section">
-                <p class="section-label">${escapeHtml(featuredLabel)}</p>
+                <p class="section-label">${featuredLabel}</p>
                 <div class="featured-papers">
                     ${dir.featured.map(p => renderFeaturedPaper(p, lang)).join('')}
                 </div>
             </section>
-        </article>
+        </section>
     `;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderResearchTabs();
-    showDirection(0);
-});
+function renderAll() {
+    const root = document.getElementById('research-content');
+    if (!root) return;
+    const lang = currentLang();
 
-document.addEventListener('languageChanged', () => {
-    showDirection(_activeDirection);
-});
+    root.innerHTML = `
+        ${renderDirectionsTOC(lang)}
+        <div class="directions-stack">
+            ${researchDirections.map((dir, i) => renderDirectionSection(dir, i, lang)).join('')}
+        </div>
+    `;
+}
+
+document.addEventListener('DOMContentLoaded', renderAll);
+document.addEventListener('languageChanged', renderAll);
