@@ -4,8 +4,9 @@ function renderResearchTabs() {
     const tabs = document.getElementById('research-tabs');
     if (!tabs) return;
 
+    const lang = localStorage.getItem('preferred-lang') || 'zh';
     tabs.innerHTML = researchDirections.map((dir, i) => {
-        const title = translations.en[dir.titleKey] || dir.titleKey;
+        const title = translations[lang][dir.titleKey] || translations.en[dir.titleKey] || dir.titleKey;
         return `<button class="tab-btn${i === 0 ? ' active' : ''}" data-idx="${i}" data-i18n="${dir.titleKey}">${title}</button>`;
     }).join('');
 
