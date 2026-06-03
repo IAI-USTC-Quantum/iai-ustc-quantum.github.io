@@ -23,17 +23,19 @@ const researchDirections = [
             },
             {
                 title: "Simulation of open quantum systems on universal quantum computers",
-                authors: ["HY Liu", "X Lin", "ZY Chen", "C Xue", "TP Sun", "QS Li", "XN Zhuang", "YJ Wang"],
+                authors: ["HY Liu", "XS Lin", "ZY Chen", "C Xue", "TP Sun", "QS Li", "YC Wu", "GP Guo"],
                 venue: "Quantum 9, 1765",
-                doi: "10.22331/q-2025-1765",
+                doi: "10.22331/q-2025-06-05-1765",
+                arxiv: "2405.20712",
                 pubDate: "2025-10",
                 summaryKey: "rd_sci_p2_summary"
             },
             {
                 title: "A hybrid quantum-classical framework for computational fluid dynamics",
-                authors: ["CC Ye", "NB An", "TY Ma", "MH Dou", "W Bai", "DJ Sun", "ZY Chen", "GP Guo"],
+                authors: ["CC Ye", "NB An", "TY Ma", "MH Dou", "W Bai", "ZY Chen", "GP Guo"],
                 venue: "Physics of Fluids 36, 12",
                 doi: "10.1063/5.0234511",
+                arxiv: "2406.16595",
                 pubDate: "2024-12",
                 summaryKey: "rd_sci_p3_summary"
             },
@@ -50,6 +52,7 @@ const researchDirections = [
                 authors: ["XN Zhuang", "ZY Chen", "C Xue", "YC Wu", "GP Guo"],
                 venue: "Quantum 7, 1127",
                 doi: "10.22331/q-2023-1127",
+                arxiv: "2208.02364",
                 pubDate: "2023-10",
                 summaryKey: "rd_sci_p5_summary"
             },
@@ -58,6 +61,7 @@ const researchDirections = [
                 authors: ["Y Yuan", "C Wang", "B Wang", "ZY Chen", "MH Dou", "YC Wu", "GP Guo"],
                 venue: "New Journal of Physics 25, 103011",
                 doi: "10.1088/1367-2630/ad09e5",
+                arxiv: "2305.09106",
                 pubDate: "2023-10",
                 summaryKey: "rd_sci_p6_summary"
             },
@@ -101,7 +105,7 @@ const researchDirections = [
             },
             {
                 title: "Quantum-enhanced LLM efficient fine tuning",
-                authors: ["X Kong", "L Li", "ZY Chen", "C Xue", "XF Xu", "HY Liu", "YC Wu", "Y Fang", "H Fang", "K Chen", "GP Guo"],
+                authors: ["XF Kong", "L Li", "ZY Chen", "C Xue", "XF Xu", "HY Liu", "YC Wu", "Y Fang", "H Fang", "KJ Chen", "Y Yang", "MH Dou", "GP Guo"],
                 venue: "arXiv:2503.12790",
                 arxiv: "2503.12790",
                 pubDate: "2025-03",
@@ -109,7 +113,7 @@ const researchDirections = [
             },
             {
                 title: "Quantum Deep Learning: A Comprehensive Review",
-                authors: ["Y Ji", "ZY Chen", "M Roth", "DA Kreplin", "C Schiffer", "M King", "O Anton", "MS Alam", "GP Guo"],
+                authors: ["Y Ji", "ZY Chen", "M Roth", "DA Kreplin", "C Schiffer", "M King", "O Anton", "MS Alam", "M Krutzik", "D Willsch", "L Mathey", "FK Wilhelm", "GP Guo"],
                 venue: "arXiv:2603.06644",
                 arxiv: "2603.06644",
                 pubDate: "2026-03",
@@ -139,7 +143,7 @@ const researchDirections = [
         featured: [
             {
                 title: "Demonstrating Coherent Quantum Routers for Bucket-Brigade Quantum Random Access Memory on a Superconducting Processor",
-                authors: ["S Zhang", "YJ Wang", "P Wang", "RZ Zhao", "XY Yang", "ZA Zhao", "TL Wang", "ZY Chen", "P Duan", "YC Wu", "GP Guo"],
+                authors: ["S Zhang", "YJ Wang", "P Wang", "RZ Zhao", "XY Yang", "ZA Zhao", "TL Wang", "HF Zhang", "ZF Li", "HR Tao", "LL Guo", "L Du", "C Zhang", "ZL Jia", "WC Kong", "ZZ Zhang", "XX Song", "YC Wu", "ZY Chen", "P Duan", "GP Guo"],
                 venue: "arXiv:2505.13958",
                 arxiv: "2505.13958",
                 pubDate: "2025-05",
@@ -148,22 +152,23 @@ const researchDirections = [
             {
                 title: "Hardware-Efficient Quantum Random Access Memory Design with a Native Gate Set on Superconducting Platforms",
                 authors: ["YJ Wang", "S Zhang", "TP Sun", "ZA Zhao", "XF Xu", "XN Zhuang", "HY Liu", "C Xue", "P Duan", "YC Wu", "ZY Chen", "GP Guo"],
-                venue: "Advanced Quantum Technologies 3, 2400519",
+                venue: "Advanced Quantum Technologies 8, 2400519",
                 doi: "10.1002/qute.202400519",
+                arxiv: "2306.10250",
                 pubDate: "2025-01",
                 summaryKey: "rd_arch_p2_summary"
             },
             {
                 title: "SparQSim: An Efficient Quantum Algorithm Simulator Leveraging State Sparsity",
-                authors: ["TP Sun", "YJ Wang", "ZY Chen", "C Xue", "HY Liu", "XN Zhuang", "XF Xu", "YC Wu", "GP Guo"],
+                authors: ["TP Sun", "ZY Chen", "YJ Wang", "C Xue", "HY Liu", "XN Zhuang", "XF Xu", "YC Wu", "GP Guo"],
                 venue: "Chinese Physics B, 2026",
-                arxiv: "2504.02455",
+                arxiv: "2503.15118",
                 pubDate: "2026-05",
                 summaryKey: "rd_arch_p3_summary"
             },
             {
                 title: "HiMA: Hierarchical Quantum Microarchitecture for Qubit-Scaling and Quantum Process-Level Parallelism",
-                authors: ["Q Zhou", "ZH Mei", "HQ Shi", "LL Guo", "XY Yang", "YJ Wang", "XF Xu", "C Xue"],
+                authors: ["Q Zhou", "ZH Mei", "HQ Shi", "LL Guo", "XY Yang", "YJ Wang", "XF Xu", "C Xue", "WC Kong", "JC Wang", "YC Wu", "ZY Chen", "GP Guo"],
                 venue: "Future Generation Computer Systems, 108484",
                 doi: "10.1016/j.future.2026.108484",
                 pubDate: "2026-03",
@@ -185,17 +190,19 @@ const researchDirections = [
         featured: [
             {
                 title: "Demonstrating a universal logical gate set in error-detecting surface codes on a superconducting quantum processor",
-                authors: ["J Zhang", "ZY Chen", "YJ Wang", "BH Lu", "HF Zhang", "JN Li", "P Duan", "YC Wu"],
+                authors: ["JX Zhang", "ZY Chen", "YJ Wang", "BH Lu", "HF Zhang", "JN Li", "P Duan", "YC Wu", "GP Guo"],
                 venue: "npj Quantum Information 11, 177",
                 doi: "10.1038/s41534-025-00999-9",
+                arxiv: "2405.09035",
                 pubDate: "2025-07",
                 summaryKey: "rd_ec_p1_summary"
             },
             {
                 title: "Low-Overhead and High-Fidelity Preparation of Logical Non-Clifford States with Multilevel Transversal Injection",
-                authors: ["J Zhang", "TH Wei", "XN Zhuang", "ZY Chen", "WC Kong", "YC Wu", "GP Guo"],
+                authors: ["JX Zhang", "TH Wei", "XN Zhuang", "ZY Chen", "WC Kong", "YC Wu", "GP Guo"],
                 venue: "Physical Review Letters 136, 080603",
-                doi: "10.1103/mjsj-hxyj",
+                doi: "10.1103/PhysRevLett.136.080603",
+                arxiv: "2509.23642",
                 pubDate: "2026-02",
                 summaryKey: "rd_ec_p2_summary"
             },
@@ -212,6 +219,7 @@ const researchDirections = [
                 authors: ["BH Lu", "P Wang", "ZY Chen", "HY Liu", "TP Sun", "P Duan", "YC Wu", "GP Guo"],
                 venue: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2025",
                 doi: "10.1109/TCAD.2024.3507580",
+                arxiv: "2311.18160",
                 pubDate: "2025-01",
                 summaryKey: "rd_ec_p4_summary"
             }

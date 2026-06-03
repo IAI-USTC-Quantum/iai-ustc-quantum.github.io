@@ -2,28 +2,30 @@ const publications = [
     {
         year: 2026,
         title: "Compressed representation of quantum states via orthogonal polynomials for flow field analysis",
-        authors: ["Y Fang", "C Xue", "TP Sun", "XF Xu", "CC Ye", "TY Ma", "HY Liu", "YC Wu", "ZY Chen", "GP Guo"],
+        authors: ["Y Fang", "C Xue", "TP Sun", "XF Xu", "XN Zhuang", "YJ Wang", "CC Ye", "TY Ma", "JX Zhang", "HY Liu", "YC Wu", "ZY Chen", "GP Guo"],
         venue: "Acta Mechanica Sinica 42 (6), 725683",
         citations: 2,
-        arxiv: "2509.08807",
+        doi: "10.1007/s10409-025-25683-x",
+        arxiv: "2504.21567",
         pubDate: "2026-06"
     },
     {
         year: 2026,
         title: "Experimental robustness benchmarking of quantum neural networks on a superconducting quantum processor",
-        authors: ["HF Zhang", "ZY Chen", "P Wang", "LL Guo", "TL Wang", "XY Yang", "RZ Zhao", "YC Wu", "GP Guo"],
+        authors: ["HF Zhang", "ZY Chen", "P Wang", "LL Guo", "TL Wang", "XY Yang", "RZ Zhao", "ZA Zhao", "S Zhang", "L Du", "HR Tao", "ZL Jia", "WC Kong", "HY Liu", "AV Vasilakos", "Y Yang", "YC Wu", "J Guan", "P Duan", "GP Guo"],
         venue: "Science China Physics, Mechanics & Astronomy 69 (6), 260315",
         citations: 0,
+        doi: "10.1007/s11433-025-2943-6",
         arxiv: "2505.16714",
         pubDate: "2026-06"
     },
     {
         year: 2026,
         title: "SparQSim: An Efficient Quantum Algorithm Simulator Leveraging State Sparsity",
-        authors: ["TP Sun", "YJ Wang", "ZY Chen", "C Xue", "HY Liu", "XN Zhuang", "XF Xu", "YC Wu", "GP Guo"],
+        authors: ["TP Sun", "ZY Chen", "YJ Wang", "C Xue", "HY Liu", "XN Zhuang", "XF Xu", "YC Wu", "GP Guo"],
         venue: "Chinese Physics B, 2026",
         citations: 3,
-        arxiv: "2504.02455",
+        arxiv: "2503.15118",
         pubDate: "2026-05"
     },
     {
@@ -32,7 +34,8 @@ const publications = [
         authors: ["YJ Wang", "TP Sun", "XN Zhuang", "XF Xu", "HY Liu", "C Xue", "YC Wu", "ZY Chen", "GP Guo"],
         venue: "Physical Review Applied 25, 044069",
         citations: 0,
-        doi: "10.1103/r2pt-dzn8",
+        doi: "10.1103/PhysRevApplied.25.044069",
+        arxiv: "2503.13832",
         pubDate: "2026-04"
     },
     {
@@ -56,7 +59,7 @@ const publications = [
     {
         year: 2026,
         title: "Quantum Deep Learning: A Comprehensive Review",
-        authors: ["Y Ji", "ZY Chen", "M Roth", "DA Kreplin", "C Schiffer", "M King", "O Anton", "MS Alam", "GP Guo"],
+        authors: ["Y Ji", "ZY Chen", "M Roth", "DA Kreplin", "C Schiffer", "M King", "O Anton", "MS Alam", "M Krutzik", "D Willsch", "L Mathey", "FK Wilhelm", "GP Guo"],
         venue: "arXiv:2603.06644",
         citations: 0,
         arxiv: "2603.06644",
@@ -65,19 +68,21 @@ const publications = [
     {
         year: 2026,
         title: "Low-Overhead and High-Fidelity Preparation of Logical Non-Clifford States with Multilevel Transversal Injection",
-        authors: ["J Zhang", "TH Wei", "XN Zhuang", "ZY Chen", "WC Kong", "YC Wu", "GP Guo"],
+        authors: ["JX Zhang", "TH Wei", "XN Zhuang", "ZY Chen", "WC Kong", "YC Wu", "GP Guo"],
         venue: "Physical Review Letters 136, 080603",
         citations: 1,
-        doi: "10.1103/mjsj-hxyj",
+        doi: "10.1103/PhysRevLett.136.080603",
+        arxiv: "2509.23642",
         pubDate: "2026-02"
     },
     {
         year: 2026,
         title: "Statistics-informed parameterized quantum circuit: towards practical quantum state preparation and learning via maximum entropy principle",
-        authors: ["XN Zhuang", "ZY Chen", "C Xue", "XF Xu", "C Wang", "HY Liu", "MY Tan", "TP Sun"],
+        authors: ["XN Zhuang", "ZY Chen", "C Xue", "XF Xu", "C Wang", "HY Liu", "TP Sun", "YJ Wang", "YC Wu", "GP Guo"],
         venue: "npj Quantum Information 12",
         citations: 0,
-        doi: "10.1038/s41534-026-2026",
+        doi: "10.1038/s41534-026-01191-5",
+        arxiv: "2406.01335",
         pubDate: "2026-01"
     },
     {
@@ -101,10 +106,11 @@ const publications = [
     {
         year: 2026,
         title: "HiMA: Hierarchical Quantum Microarchitecture for Qubit-Scaling and Quantum Process-Level Parallelism",
-        authors: ["Q Zhou", "ZH Mei", "HQ Shi", "LL Guo", "XY Yang", "YJ Wang", "XF Xu", "C Xue"],
+        authors: ["Q Zhou", "ZH Mei", "HQ Shi", "LL Guo", "XY Yang", "YJ Wang", "XF Xu", "C Xue", "WC Kong", "JC Wang", "YC Wu", "ZY Chen", "GP Guo"],
         venue: "Future Generation Computer Systems, 108484",
         citations: 0,
         doi: "10.1016/j.future.2026.108484",
+        arxiv: "2408.11311",
         pubDate: "2026-03"
     },
     {
@@ -131,13 +137,14 @@ const publications = [
         authors: ["HY Liu", "XN Zhuang", "C Wang", "QS Li", "MH Dou", "ZY Chen", "C Xue", "YC Wu", "GP Guo"],
         venue: "Science China Information Sciences 68 (10), 1-15",
         citations: 2,
-        doi: "10.1007/s11432-024-4475-4",
+        doi: "10.1007/s11432-024-4411-8",
+        arxiv: "2410.20867",
         pubDate: "2025-10"
     },
     {
         year: 2025,
         title: "A Pathway to Practical Quantum Advantage in Solving Navier-Stokes Equations",
-        authors: ["XN Zhuang", "ZY Chen", "MY Tan", "J Zhang", "CC Ye", "TH Wei", "TY Ma", "C Xue", "XF Xu", "YC Wu", "GP Guo"],
+        authors: ["XN Zhuang", "ZY Chen", "MY Tan", "JX Zhang", "CC Ye", "TH Wei", "TY Ma", "C Xue", "HY Liu", "QS Li", "TP Sun", "XF Xu", "YJ Wang", "YC Wu", "GP Guo"],
         venue: "arXiv:2509.08807",
         citations: 3,
         arxiv: "2509.08807",
@@ -146,16 +153,17 @@ const publications = [
     {
         year: 2025,
         title: "Demonstrating a universal logical gate set in error-detecting surface codes on a superconducting quantum processor",
-        authors: ["J Zhang", "ZY Chen", "YJ Wang", "BH Lu", "HF Zhang", "JN Li", "P Duan", "YC Wu"],
+        authors: ["JX Zhang", "ZY Chen", "YJ Wang", "BH Lu", "HF Zhang", "JN Li", "P Duan", "YC Wu", "GP Guo"],
         venue: "npj Quantum Information 11, 177",
         citations: 8,
         doi: "10.1038/s41534-025-00999-9",
+        arxiv: "2405.09035",
         pubDate: "2025-07"
     },
     {
         year: 2025,
         title: "Demonstrating Coherent Quantum Routers for Bucket-Brigade Quantum Random Access Memory on a Superconducting Processor",
-        authors: ["S Zhang", "YJ Wang", "P Wang", "RZ Zhao", "XY Yang", "ZA Zhao", "TL Wang", "ZY Chen", "P Duan", "YC Wu", "GP Guo"],
+        authors: ["S Zhang", "YJ Wang", "P Wang", "RZ Zhao", "XY Yang", "ZA Zhao", "TL Wang", "HF Zhang", "ZF Li", "HR Tao", "LL Guo", "L Du", "C Zhang", "ZL Jia", "WC Kong", "ZZ Zhang", "XX Song", "YC Wu", "ZY Chen", "P Duan", "GP Guo"],
         venue: "arXiv:2505.13958",
         citations: 5,
         arxiv: "2505.13958",
@@ -168,12 +176,13 @@ const publications = [
         venue: "Physical Review A 112 (5), 052438",
         citations: 0,
         doi: "10.1103/PhysRevA.112.052438",
+        arxiv: "2305.15976",
         pubDate: "2025-05"
     },
     {
         year: 2025,
         title: "Quantum-enhanced LLM efficient fine tuning",
-        authors: ["X Kong", "L Li", "ZY Chen", "C Xue", "XF Xu", "HY Liu", "YC Wu", "Y Fang", "H Fang", "K Chen", "GP Guo"],
+        authors: ["XF Kong", "L Li", "ZY Chen", "C Xue", "XF Xu", "HY Liu", "YC Wu", "Y Fang", "H Fang", "KJ Chen", "Y Yang", "MH Dou", "GP Guo"],
         venue: "arXiv:2503.12790",
         citations: 18,
         arxiv: "2503.12790",
@@ -182,19 +191,21 @@ const publications = [
     {
         year: 2025,
         title: "Quantum homotopy analysis method with quantum-compatible linearization for nonlinear partial differential equations",
-        authors: ["C Xue", "XF Xu", "XN Zhuang", "TP Sun", "YJ Wang", "MY Tan", "CC Ye", "HY Liu"],
+        authors: ["C Xue", "XF Xu", "XN Zhuang", "TP Sun", "YJ Wang", "MY Tan", "CC Ye", "HY Liu", "YC Wu", "ZY Chen", "GP Guo"],
         venue: "Science China Physics, Mechanics & Astronomy 68, 104702",
         citations: 6,
-        doi: "10.1007/s11433-025-2607",
+        doi: "10.1007/s11433-024-2584-2",
+        arxiv: "2411.06759",
         pubDate: "2025-10"
     },
     {
         year: 2025,
         title: "Simulation of open quantum systems on universal quantum computers",
-        authors: ["HY Liu", "X Lin", "ZY Chen", "C Xue", "TP Sun", "QS Li", "XN Zhuang", "YJ Wang"],
+        authors: ["HY Liu", "XS Lin", "ZY Chen", "C Xue", "TP Sun", "QS Li", "YC Wu", "GP Guo"],
         venue: "Quantum 9, 1765",
         citations: 11,
-        doi: "10.22331/q-2025-1765",
+        doi: "10.22331/q-2025-06-05-1765",
+        arxiv: "2405.20712",
         pubDate: "2025-10"
     },
     {
@@ -204,6 +215,7 @@ const publications = [
         venue: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2025",
         citations: 0,
         doi: "10.1109/TCAD.2024.3507580",
+        arxiv: "2311.18160",
         pubDate: "2025-01"
     },
     {
@@ -222,15 +234,17 @@ const publications = [
         venue: "Chinese Physics Letters 42 (3), 030204",
         citations: 0,
         doi: "10.1088/0256-307X/42/3/030204",
+        arxiv: "2412.01183",
         pubDate: "2025-03"
     },
     {
         year: 2025,
         title: "Hardware-Efficient Quantum Random Access Memory Design with a Native Gate Set on Superconducting Platforms",
         authors: ["YJ Wang", "S Zhang", "TP Sun", "ZA Zhao", "XF Xu", "XN Zhuang", "HY Liu", "C Xue", "P Duan", "YC Wu", "ZY Chen", "GP Guo"],
-        venue: "Advanced Quantum Technologies 3, 2400519",
+        venue: "Advanced Quantum Technologies 8, 2400519",
         citations: 0,
         doi: "10.1002/qute.202400519",
+        arxiv: "2306.10250",
         pubDate: "2025-01"
     },
     {
@@ -245,28 +259,31 @@ const publications = [
     {
         year: 2024,
         title: "A hybrid quantum-classical framework for computational fluid dynamics",
-        authors: ["CC Ye", "NB An", "TY Ma", "MH Dou", "W Bai", "DJ Sun", "ZY Chen", "GP Guo"],
+        authors: ["CC Ye", "NB An", "TY Ma", "MH Dou", "W Bai", "ZY Chen", "GP Guo"],
         venue: "Physics of Fluids 36, 12",
         citations: 28,
         doi: "10.1063/5.0234511",
+        arxiv: "2406.16595",
         pubDate: "2024-12"
     },
     {
         year: 2024,
         title: "Enabling large-scale and high-precision fluid simulations on near-term quantum computers",
-        authors: ["ZY Chen", "TY Ma", "CC Ye", "L Xu", "W Bai", "L Zhou", "MY Tan", "XN Zhuang", "XF Xu"],
+        authors: ["ZY Chen", "TY Ma", "CC Ye", "L Xu", "MY Tan", "XN Zhuang", "XF Xu", "YJ Wang", "TP Sun", "Y Chen", "L Du", "LL Guo", "HF Zhang", "HR Tao", "TL Wang", "XY Yang", "ZA Zhao", "P Wang", "S Zhang", "C Zhang", "RZ Zhao", "ZL Jia", "WC Kong", "MH Dou", "JC Wang", "HY Liu", "C Xue", "PJY Zhang", "SH Huang", "P Duan", "YC Wu", "GP Guo"],
         venue: "Computer Methods in Applied Mechanics and Engineering 432, 117428",
         citations: 34,
         doi: "10.1016/j.cma.2024.117428",
+        arxiv: "2406.06063",
         pubDate: "2024-10"
     },
     {
         year: 2024,
         title: "An efficient quantum algorithm for independent component analysis",
-        authors: ["XF Xu", "XN Zhuang", "C Xue", "ZY Chen", "YC Wu", "GP Guo"],
+        authors: ["XF Xu", "C Xue", "ZY Chen", "YC Wu", "GP Guo"],
         venue: "New Journal of Physics 26, 073030",
         citations: 3,
         doi: "10.1088/1367-2630/ad5707",
+        arxiv: "2311.12529",
         pubDate: "2024-07"
     },
     {
@@ -294,6 +311,7 @@ const publications = [
         venue: "New Journal of Physics 25, 103011",
         citations: 39,
         doi: "10.1088/1367-2630/ad09e5",
+        arxiv: "2305.09106",
         pubDate: "2023-10"
     },
     {
@@ -303,6 +321,7 @@ const publications = [
         venue: "Quantum 7, 1127",
         citations: 13,
         doi: "10.22331/q-2023-1127",
+        arxiv: "2208.02364",
         pubDate: "2023-10"
     },
     {
@@ -322,15 +341,6 @@ const publications = [
         citations: 0,
         doi: "10.34133/icomputing.0045",
         pubDate: "2023-06"
-    },
-    {
-        year: 2023,
-        title: "Data-Driven Quantum Dynamical Embedding Method for Long-Term Prediction on Near-Term Quantum Computers",
-        authors: ["TP Sun", "ZY Chen", "C Xue", "HY Liu", "XN Zhuang", "YJ Wang", "SX Ma", "HF Zhang", "YC Wu", "GP Guo"],
-        venue: "Physical Review A 112 (5), 052438",
-        citations: 0,
-        doi: "10.1103/PhysRevA.112.052438",
-        pubDate: "2023-11"
     },
     {
         year: 2022,
@@ -357,6 +367,7 @@ const publications = [
         venue: "Quantum Information Processing 21, 137",
         citations: 60,
         doi: "10.1007/s11128-022-03603-3",
+        arxiv: "2102.03557",
         pubDate: "2022-04"
     },
     {
@@ -366,6 +377,7 @@ const publications = [
         venue: "New Journal of Physics 24, 073036",
         citations: 15,
         doi: "10.1088/1367-2630/ac8662",
+        arxiv: "2104.14214",
         pubDate: "2022-07"
     },
     {
@@ -375,24 +387,27 @@ const publications = [
         venue: "Chinese Physics Letters 38, 3, 030302",
         citations: 130,
         doi: "10.1088/0256-307X/38/3/030302",
+        arxiv: "1909.02196",
         pubDate: "2022-03"
     },
     {
         year: 2021,
         title: "A quantum circuit simulator and its applications on Sunway TaihuLight supercomputer",
-        authors: ["Z Wang", "Z Chen", "S Wang", "W Li", "Y Gu", "G Guo", "Z Wei"],
+        authors: ["ZM Wang", "ZY Chen", "SB Wang", "WD Li", "YJ Gu", "GP Guo", "ZQ Wei"],
         venue: "Scientific Reports 11, 355",
         citations: 32,
         doi: "10.1038/s41598-020-79452-2",
+        arxiv: "2008.07140",
         pubDate: "2021-01"
     },
     {
         year: 2018,
         title: "64-qubit quantum circuit simulation",
         authors: ["ZY Chen", "Q Zhou", "C Xue", "X Yang", "GC Guo", "GP Guo"],
-        venue: "Science Bulletin 63, 15, 964–971",
+        venue: "Science Bulletin 63, 15, 964-971",
         citations: 202,
         doi: "10.1016/j.scienceb.2018.08.001",
+        arxiv: "1802.06952",
         pubDate: "2018-08"
     }
 ];
