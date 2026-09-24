@@ -1,6 +1,53 @@
 const publications = [
     {
         year: 2026,
+        title: "Spectator Leakage Suppression via Invariant Subspace Engineering for CZ Gates in Superconducting Quantum Circuits",
+        authors: ["P Wang", "BH Lu", "TL Wang", "S Zhang", "ZY Chen", "HF Zhang", "RZ Zhao", "XY Yang", "ZA Zhao", "ZZ Zhang", "XX Song", "YC Wu", "P Duan", "GP Guo"],
+        venue: "Physical Review Letters 137 (10), 100802",
+        citations: 0,
+        doi: "10.1103/zywf-twfv",
+        arxiv: "2507.14531",
+        pubDate: "2026-09"
+    },
+    {
+        year: 2026,
+        title: "Poisson-Compiled Quantum Singular Value Transformation for Power-Exponential Dissipation",
+        authors: ["C Wang", "XN Zhuang", "MH Dou", "ZY Chen", "GP Guo"],
+        venue: "arXiv:2608.04263",
+        citations: 0,
+        arxiv: "2608.04263",
+        pubDate: "2026-08"
+    },
+    {
+        year: 2026,
+        title: "Q-Tag: Watermarking Quantum Circuit Generative Models",
+        authors: ["Y Yang", "YZ Long", "H Fang", "ZY Chen", "ZH Li", "WM Zhang", "GP Guo"],
+        venue: "Science China Information Sciences 69 (8), 180504",
+        citations: 0,
+        doi: "10.1007/s11432-025-5016-2",
+        arxiv: "2602.23085",
+        pubDate: "2026-07"
+    },
+    {
+        year: 2026,
+        title: "Simulation of Lindbladian dynamics via adaptive variational quantum trajectory compression",
+        authors: ["HY Liu", "C Xue", "YJ Wang", "XN Zhuang", "C Wang", "YC Wu", "ZY Chen", "GP Guo"],
+        venue: "arXiv:2607.09051",
+        citations: 0,
+        arxiv: "2607.09051",
+        pubDate: "2026-07"
+    },
+    {
+        year: 2026,
+        title: "Routing Codes: High-Rate Quantum LDPC Codes with Short, Parallel Non-Local Connectivity",
+        authors: ["JX Zhang", "ZY Chen", "P Duan", "JN Li", "TH Wei", "QY Hou", "WC Kong", "YC Wu", "GP Guo"],
+        venue: "arXiv:2606.25330",
+        citations: 0,
+        arxiv: "2606.25330",
+        pubDate: "2026-06"
+    },
+    {
+        year: 2026,
         title: "Compressed representation of quantum states via orthogonal polynomials for flow field analysis",
         authors: ["Y Fang", "C Xue", "TP Sun", "XF Xu", "XN Zhuang", "YJ Wang", "CC Ye", "TY Ma", "JX Zhang", "HY Liu", "YC Wu", "ZY Chen", "GP Guo"],
         venue: "Acta Mechanica Sinica 42 (6), 725683",
@@ -40,11 +87,11 @@ const publications = [
     },
     {
         year: 2026,
-        title: "A Unified Poisson Summation Framework for Generalized Quantum Matrix Transformations",
-        authors: ["C Wang", "XN Zhuang", "MH Dou", "ZY Chen", "GP Guo"],
-        venue: "arXiv:2604.02874",
-        citations: 1,
-        arxiv: "2604.02874",
+        title: "Adaptive Deformation of Color Code in Square Lattices with Defects",
+        authors: ["TH Wei", "JX Zhang", "JN Li", "WC Kong", "YC Wu", "GP Guo"],
+        venue: "arXiv:2604.05874",
+        citations: 0,
+        arxiv: "2604.05874",
         pubDate: "2026-04"
     },
     {
@@ -63,6 +110,15 @@ const publications = [
         venue: "arXiv:2603.06644",
         citations: 0,
         arxiv: "2603.06644",
+        pubDate: "2026-03"
+    },
+    {
+        year: 2026,
+        title: "Quantum-Inspired Fine-Tuning for Few-Shot AIGC Detection via Phase-Structured Reparameterization",
+        authors: ["KY Xing", "H Fang", "ZY Chen", "ZH Li", "Y Yang", "WM Zhang", "GP Guo"],
+        venue: "arXiv:2603.02281",
+        citations: 0,
+        arxiv: "2603.02281",
         pubDate: "2026-03"
     },
     {
@@ -134,11 +190,11 @@ const publications = [
     {
         year: 2025,
         title: "Quantum computational insurance and actuarial science",
-        authors: ["HY Liu", "XN Zhuang", "C Wang", "QS Li", "MH Dou", "ZY Chen", "C Xue", "YC Wu", "GP Guo"],
-        venue: "Science China Information Sciences 68 (10), 1-15",
+        authors: ["HY Liu", "XN Zhuang", "C Wang", "QS Li", "MH Dou", "ZY Chen", "C Xue", "YC Wu", "GP Guo", "GC Guo"],
+        venue: "Science China Information Sciences 68 (10), 202501",
         citations: 2,
         doi: "10.1007/s11432-024-4411-8",
-        arxiv: "2410.20867",
+        arxiv: "2410.20841",
         pubDate: "2025-10"
     },
     {
@@ -149,6 +205,15 @@ const publications = [
         citations: 3,
         arxiv: "2509.08807",
         pubDate: "2025-09"
+    },
+    {
+        year: 2025,
+        title: "Quantum State Preparation by Improved MPS Method",
+        authors: ["C Wang", "PR Zhou", "XN Zhuang", "ZW Cui", "MH Dou", "ZY Chen", "GP Guo"],
+        venue: "arXiv:2508.12821",
+        citations: 0,
+        arxiv: "2508.12821",
+        pubDate: "2025-08"
     },
     {
         year: 2025,
@@ -171,6 +236,16 @@ const publications = [
     },
     {
         year: 2025,
+        title: "Accelerating Fermionic System Simulation on Quantum Computers",
+        authors: ["QS Li", "JX Zhang", "HY Liu", "QC Wang", "YC Wu", "GP Guo"],
+        venue: "Physical Review A 111, 052606",
+        citations: 0,
+        doi: "10.1103/PhysRevA.111.052606",
+        arxiv: "2505.08206",
+        pubDate: "2025-05"
+    },
+    {
+        year: 2025,
         title: "Data-driven quantum dynamical embedding method for long-term prediction on near-term quantum computers",
         authors: ["TP Sun", "ZY Chen", "C Xue", "HY Liu", "XN Zhuang", "YJ Wang", "SX Ma", "HF Zhang", "YC Wu", "GP Guo"],
         venue: "Physical Review A 112 (5), 052438",
@@ -178,6 +253,15 @@ const publications = [
         doi: "10.1103/PhysRevA.112.052438",
         arxiv: "2305.15976",
         pubDate: "2025-05"
+    },
+    {
+        year: 2025,
+        title: "QPanda3: A High-Performance Software-Hardware Collaborative Framework for Large-Scale Quantum-Classical Computing Integration",
+        authors: ["TR Zou", "Y Fang", "J Wang", "MH Dou", "J Fu", "ZQ Zhao", "SB Zhao", "L Yu", "DY Zhao", "ZY Chen", "GP Guo"],
+        venue: "arXiv:2504.02455",
+        citations: 0,
+        arxiv: "2504.02455",
+        pubDate: "2025-04"
     },
     {
         year: 2025,
