@@ -41,9 +41,10 @@ const researchDirections = [
             },
             {
                 title: "Enabling large-scale and high-precision fluid simulations on near-term quantum computers",
-                authors: ["ZY Chen", "TY Ma", "CC Ye", "L Xu", "W Bai", "L Zhou", "MY Tan", "XN Zhuang", "XF Xu"],
+                authors: ["ZY Chen", "TY Ma", "CC Ye", "L Xu", "MY Tan", "XN Zhuang", "XF Xu", "YJ Wang", "TP Sun", "Y Chen", "L Du", "LL Guo", "HF Zhang", "HR Tao", "TL Wang", "XY Yang", "ZA Zhao", "P Wang", "S Zhang", "C Zhang", "RZ Zhao", "ZL Jia", "WC Kong", "MH Dou", "JC Wang", "HY Liu", "C Xue", "PJY Zhang", "SH Huang", "P Duan", "YC Wu", "GP Guo"],
                 venue: "Computer Methods in Applied Mechanics and Engineering 432, 117428",
                 doi: "10.1016/j.cma.2024.117428",
+                arxiv: "2406.06063",
                 pubDate: "2024-10",
                 summaryKey: "rd_sci_p4_summary"
             },

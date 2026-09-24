@@ -28,10 +28,28 @@ const projects = [
         url: "https://github.com/IAI-USTC-Quantum/Quantum-Resource-Estimator",
         badges: ["Python"],
         descriptionKey: "project5_desc",
+    },
+    {
+        name: "QuantumAtlas",
+        url: "https://github.com/IAI-USTC-Quantum/QuantumAtlas",
+        badges: ["Go", "Python"],
+        descriptionKey: "project6_desc",
+    },
+    {
+        name: "qatlas-cli",
+        url: "https://github.com/IAI-USTC-Quantum/qatlas-cli",
+        badges: ["Python", "CLI"],
+        descriptionKey: "project7_desc",
+    },
+    {
+        name: "uniqc-cppsimulator",
+        url: "https://github.com/IAI-USTC-Quantum/uniqc-cppsimulator",
+        badges: ["C++", "Python"],
+        descriptionKey: "project8_desc",
     }
 ];
 
-const members = ["Agony5757", "TMYTiMidlY", "YunJ1e", "RichardSun2019", "yowakkojay", "qsxustc"];
+const members = ["Agony5757", "lxy689", "TMYTiMidlY", "YunJ1e", "yowakkojay", "qsxustc"];
 
 function renderProjects() {
     const list = document.getElementById('projects-list');
