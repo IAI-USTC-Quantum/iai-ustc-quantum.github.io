@@ -140,15 +140,6 @@ const researchDirections = [
                 summaryKey: "rd_sci_p20_summary"
             },
             {
-                title: "Data-driven quantum dynamical embedding method for long-term prediction on near-term quantum computers",
-                authors: ["TP Sun", "ZY Chen", "C Xue", "HY Liu", "XN Zhuang", "YJ Wang", "SX Ma", "HF Zhang", "YC Wu", "GP Guo"],
-                venue: "Physical Review A 112 (5), 052438",
-                doi: "10.1103/PhysRevA.112.052438",
-                arxiv: "2305.15976",
-                pubDate: "2025-05",
-                summaryKey: "rd_sci_p21_summary"
-            },
-            {
                 title: "A hybrid quantum-classical framework for computational fluid dynamics",
                 authors: ["CC Ye", "NB An", "TY Ma", "MH Dou", "W Bai", "ZY Chen", "GP Guo"],
                 venue: "Physics of Fluids 36, 12",
@@ -276,6 +267,15 @@ const researchDirections = [
                         arxiv: "2406.01335",
                         pubDate: "2026-01",
                         summaryKey: "rd_ml_p11_summary"
+                    },
+                    {
+                        title: "Data-driven quantum dynamical embedding method for long-term prediction on near-term quantum computers",
+                        authors: ["TP Sun", "ZY Chen", "C Xue", "HY Liu", "XN Zhuang", "YJ Wang", "SX Ma", "HF Zhang", "YC Wu", "GP Guo"],
+                        venue: "Physical Review A 112 (5), 052438",
+                        doi: "10.1103/PhysRevA.112.052438",
+                        arxiv: "2305.15976",
+                        pubDate: "2025-05",
+                        summaryKey: "rd_ml_p16_summary"
                     },
                     {
                         title: "Quantum-enhanced LLM efficient fine tuning",

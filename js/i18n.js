@@ -68,7 +68,6 @@ const translations = {
         rd_sci_p18_summary: "Charts a pathway to practical quantum advantage for solving Navier-Stokes equations.",
         rd_sci_p19_summary: "Prepares quantum states faster with an improved matrix-product-state method.",
         rd_sci_p20_summary: "Accelerates fermionic system simulation on quantum computers.",
-        rd_sci_p21_summary: "A data-driven quantum dynamical embedding method for long-term prediction on near-term quantum computers.",
         rd_sci_p22_summary: "Optimizes variational quantum eigensolvers with particle swarm optimization.",
         rd_sci_p23_summary: "An efficient quantum algorithm for independent component analysis.",
 
@@ -100,6 +99,7 @@ const translations = {
         rd_ml_p13_summary: "A no-reference image quality loss that makes watermarked images look similar and look good.",
         rd_ml_p14_summary: "Ensemble learning built on quantum support vector machines.",
         rd_ml_p15_summary: "Optimizes qubit frequencies of superconducting chips with neural networks.",
+        rd_ml_p16_summary: "A data-driven quantum dynamical embedding method for long-term prediction on near-term quantum computers.",
 
         rd_arch_title: "Quantum Architecture & QRAM",
         rd_arch_tagline: "Building the foundational components of scalable quantum systems.",
@@ -207,7 +207,6 @@ const translations = {
         rd_sci_p18_summary: "给出求解 Navier-Stokes 方程实现实用量子优势的路径。",
         rd_sci_p19_summary: "通过改进的矩阵乘积态方法加速量子态制备。",
         rd_sci_p20_summary: "加速量子计算机上的费米子体系模拟。",
-        rd_sci_p21_summary: "数据驱动的量子动力学嵌入方法，在近期量子计算机上实现长期预测。",
         rd_sci_p22_summary: "用粒子群优化改进变分量子本征求解器。",
         rd_sci_p23_summary: "面向独立成分分析的高效量子算法。",
 
@@ -239,6 +238,7 @@ const translations = {
         rd_ml_p13_summary: "一种无参考图像质量损失函数，让含水印图像既相似又自然。",
         rd_ml_p14_summary: "构建在量子支持向量机之上的集成学习方法。",
         rd_ml_p15_summary: "利用神经网络优化超导量子芯片的比特频率。",
+        rd_ml_p16_summary: "数据驱动的量子动力学嵌入方法，在近期量子计算机上实现长期预测。",
 
         rd_arch_title: "量子架构与量子随机存取存储",
         rd_arch_tagline: "为可扩展量子系统打造核心构件。",
