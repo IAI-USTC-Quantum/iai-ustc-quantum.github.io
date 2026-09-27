@@ -88,6 +88,39 @@ function renderFeaturedPaper(paper, lang) {
     `;
 }
 
+function renderSubgroupSection(sub, lang) {
+    const title = escapeHtml(t(sub.titleKey, lang));
+    const desc = escapeHtml(t(sub.descKey, lang));
+    const themes = (sub.themeKeys || []).map(k => t(k, lang));
+    const themesLabel = escapeHtml(t('rd_themes_label', lang));
+    const featuredLabel = escapeHtml(t('rd_featured', lang));
+
+    const themesHtml = themes.length
+        ? `
+            <section class="direction-section">
+                <p class="section-label">${themesLabel}</p>
+                <ul class="themes-list">
+                    ${themes.map(theme => `<li class="theme-pill">${escapeHtml(theme)}</li>`).join('')}
+                </ul>
+            </section>
+        `
+        : '';
+
+    return `
+        <section class="direction-subgroup" id="${sub.id}">
+            <h3 class="subgroup-title" data-i18n="${sub.titleKey}">${title}</h3>
+            <p class="subgroup-desc">${desc}</p>
+            ${themesHtml}
+            <section class="direction-section">
+                <p class="section-label">${featuredLabel}</p>
+                <div class="featured-papers">
+                    ${sub.featured.map(p => renderFeaturedPaper(p, lang)).join('')}
+                </div>
+            </section>
+        </section>
+    `;
+}
+
 function renderDirectionSection(dir, idx, lang) {
     const title = escapeHtml(t(dir.titleKey, lang));
     const tagline = escapeHtml(t(dir.taglineKey, lang));
@@ -112,6 +145,19 @@ function renderDirectionSection(dir, idx, lang) {
         `
         : '';
 
+    const featuredHtml = `
+        <section class="direction-section">
+            <p class="section-label">${featuredLabel}</p>
+            <div class="featured-papers">
+                ${(dir.featured || []).map(p => renderFeaturedPaper(p, lang)).join('')}
+            </div>
+        </section>
+    `;
+
+    const contentHtml = dir.subgroups
+        ? `<div class="direction-subgroups">${dir.subgroups.map(s => renderSubgroupSection(s, lang)).join('')}</div>`
+        : `${themesHtml}${featuredHtml}`;
+
     return `
         <section class="direction-panel" id="${dir.id}">
             <header class="direction-header">
@@ -129,14 +175,7 @@ function renderDirectionSection(dir, idx, lang) {
                 <p class="direction-desc">${desc}</p>
             </section>
 
-            ${themesHtml}
-
-            <section class="direction-section">
-                <p class="section-label">${featuredLabel}</p>
-                <div class="featured-papers">
-                    ${dir.featured.map(p => renderFeaturedPaper(p, lang)).join('')}
-                </div>
-            </section>
+            ${contentHtml}
         </section>
     `;
 }

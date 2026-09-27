@@ -216,128 +216,155 @@ const researchDirections = [
         titleKey: "rd_ml_title",
         taglineKey: "rd_ml_tagline",
         descKey: "rd_ml_desc",
-        themeKeys: [
-            "rd_ml_theme_1",
-            "rd_ml_theme_2",
-            "rd_ml_theme_3",
-            "rd_ml_theme_4"
-        ],
-        featured: [
+        subgroups: [
             {
-                title: "Looks Similar and Looks Good: A No-reference Image Quality Loss for Watermarking Framework",
-                authors: ["Y Yang", "K Xing", "L Zhou", "L Zhao", "H Fang", "Z Chen", "W Zhang"],
-                venue: "IEEE Transactions on Circuits and Systems for Video Technology 36 (9), 13993-14006",
-                doi: "10.1109/TCSVT.2026.3695018",
-                pubDate: "2026-09",
-                summaryKey: "rd_ml_p13_summary"
+                id: "quantum-for-ai",
+                titleKey: "rd_ml_sub1_title",
+                descKey: "rd_ml_sub1_desc",
+                themeKeys: [
+                    "rd_ml_theme_1",
+                    "rd_ml_theme_2",
+                    "rd_ml_theme_3"
+                ],
+                featured: [
+                    {
+                        title: "Quantum Defensive Distillation",
+                        authors: ["HF Zhang", "ZY Chen", "P Duan", "GP Guo"],
+                        venue: "Chinese Physics B (in press), 2026",
+                        doi: "10.1088/1674-1056/ae7278",
+                        pubDate: "2026-09",
+                        summaryKey: "rd_ml_p6_summary"
+                    },
+                    {
+                        title: "Experimental robustness benchmarking of quantum neural networks on a superconducting quantum processor",
+                        authors: ["HF Zhang", "ZY Chen", "P Wang", "LL Guo", "TL Wang", "XY Yang", "RZ Zhao", "ZA Zhao", "S Zhang", "L Du", "HR Tao", "ZL Jia", "WC Kong", "HY Liu", "AV Vasilakos", "Y Yang", "YC Wu", "J Guan", "P Duan", "GP Guo"],
+                        venue: "Science China Physics, Mechanics & Astronomy 69 (6), 260315",
+                        doi: "10.1007/s11433-025-2943-6",
+                        arxiv: "2505.16714",
+                        pubDate: "2026-06",
+                        summaryKey: "rd_ml_p8_summary"
+                    },
+                    {
+                        title: "Quantum Deep Learning: A Comprehensive Review",
+                        authors: ["Y Ji", "ZY Chen", "M Roth", "DA Kreplin", "C Schiffer", "M King", "O Anton", "MS Alam", "M Krutzik", "D Willsch", "L Mathey", "FK Wilhelm", "GP Guo"],
+                        venue: "arXiv:2603.06644",
+                        arxiv: "2603.06644",
+                        pubDate: "2026-03",
+                        summaryKey: "rd_ml_p3_summary"
+                    },
+                    {
+                        title: "Quantum-Inspired Fine-Tuning for Few-Shot AIGC Detection via Phase-Structured Reparameterization",
+                        authors: ["KY Xing", "H Fang", "ZY Chen", "ZH Li", "Y Yang", "WM Zhang", "GP Guo"],
+                        venue: "arXiv:2603.02281",
+                        arxiv: "2603.02281",
+                        pubDate: "2026-03",
+                        summaryKey: "rd_ml_p9_summary"
+                    },
+                    {
+                        title: "AI-Generated Image Detection Algorithm Based on Classical-Quantum Hybrid Neural Network",
+                        authors: ["J Xu", "H Fang", "Y Yang", "K Chen", "ZY Chen", "MH Dou", "L Qu", "WM Zhang", "GP Guo"],
+                        venue: "Science China Information Sciences 69 (1), 112501",
+                        doi: "10.1007/s11432-024-4475-4",
+                        pubDate: "2026-01",
+                        summaryKey: "rd_ml_p10_summary"
+                    },
+                    {
+                        title: "Statistics-informed parameterized quantum circuit: towards practical quantum state preparation and learning via maximum entropy principle",
+                        authors: ["XN Zhuang", "ZY Chen", "C Xue", "XF Xu", "C Wang", "HY Liu", "TP Sun", "YJ Wang", "YC Wu", "GP Guo"],
+                        venue: "npj Quantum Information 12 (1), 45",
+                        doi: "10.1038/s41534-026-01191-5",
+                        arxiv: "2406.01335",
+                        pubDate: "2026-01",
+                        summaryKey: "rd_ml_p11_summary"
+                    },
+                    {
+                        title: "Quantum-enhanced LLM efficient fine tuning",
+                        authors: ["XF Kong", "L Li", "ZY Chen", "C Xue", "XF Xu", "HY Liu", "YC Wu", "Y Fang", "H Fang", "KJ Chen", "Y Yang", "MH Dou", "GP Guo"],
+                        venue: "arXiv:2503.12790",
+                        arxiv: "2503.12790",
+                        pubDate: "2025-03",
+                        summaryKey: "rd_ml_p2_summary"
+                    },
+                    {
+                        title: "Quantum Ensemble Learning with Quantum Support Vector Machine",
+                        authors: ["Z Yu", "Z Chen", "C Xue"],
+                        venue: "2024 7th International Conference on Advanced Algorithms and Control Engineering (ICAACE), 1359-1363",
+                        doi: "10.1109/ICAACE61206.2024.10548133",
+                        pubDate: "2024-03",
+                        summaryKey: "rd_ml_p14_summary"
+                    },
+                    {
+                        title: "End-to-end quantum vision transformer: towards practical quantum speedup in large-scale models",
+                        authors: ["C Xue", "ZY Chen", "XN Zhuang", "YJ Wang", "TP Sun", "JC Wang", "HY Liu", "YC Wu", "GP Guo"],
+                        venue: "arXiv:2402.18940",
+                        arxiv: "2402.18940",
+                        pubDate: "2024-02",
+                        summaryKey: "rd_ml_p1_summary"
+                    },
+                    {
+                        title: "QAOA-based MRMR Algorithm for Feature Selection",
+                        authors: ["X Jiang", "Z Chen", "J Zhang", "Z Yu", "L Wang", "H Mei"],
+                        venue: "2023 International Conference on Advances in Artificial Intelligence and Applications (AAIA 2023)",
+                        doi: "10.1145/3603273.3631193",
+                        pubDate: "2023-11",
+                        summaryKey: "rd_ml_p12_summary"
+                    }
+                ]
             },
             {
-                title: "Quantum Defensive Distillation",
-                authors: ["HF Zhang", "ZY Chen", "P Duan", "GP Guo"],
-                venue: "Chinese Physics B (in press), 2026",
-                doi: "10.1088/1674-1056/ae7278",
-                pubDate: "2026-09",
-                summaryKey: "rd_ml_p6_summary"
-            },
-            {
-                title: "Q-Tag: Watermarking Quantum Circuit Generative Models",
-                authors: ["Y Yang", "YZ Long", "H Fang", "ZY Chen", "ZH Li", "WM Zhang", "GP Guo"],
-                venue: "Science China Information Sciences 69 (8), 180504",
-                doi: "10.1007/s11432-025-5016-2",
-                arxiv: "2602.23085",
-                pubDate: "2026-07",
-                summaryKey: "rd_ml_p7_summary"
-            },
-            {
-                title: "Experimental robustness benchmarking of quantum neural networks on a superconducting quantum processor",
-                authors: ["HF Zhang", "ZY Chen", "P Wang", "LL Guo", "TL Wang", "XY Yang", "RZ Zhao", "ZA Zhao", "S Zhang", "L Du", "HR Tao", "ZL Jia", "WC Kong", "HY Liu", "AV Vasilakos", "Y Yang", "YC Wu", "J Guan", "P Duan", "GP Guo"],
-                venue: "Science China Physics, Mechanics & Astronomy 69 (6), 260315",
-                doi: "10.1007/s11433-025-2943-6",
-                arxiv: "2505.16714",
-                pubDate: "2026-06",
-                summaryKey: "rd_ml_p8_summary"
-            },
-            {
-                title: "QuantumQA: Enhancing Scientific Reasoning via Physics-Consistent Dataset and Verification-Aware Reinforcement Learning",
-                authors: ["SX Qu", "TP Sun", "YJ Wang", "HY Liu", "C Xue", "XF Xu", "H Fang", "Y Yang", "YC Wu", "GP Guo", "ZY Chen"],
-                venue: "ACL 2026",
-                arxiv: "2604.18176",
-                pubDate: "2026-04",
-                summaryKey: "rd_ml_p4_summary"
-            },
-            {
-                title: "Quantum Deep Learning: A Comprehensive Review",
-                authors: ["Y Ji", "ZY Chen", "M Roth", "DA Kreplin", "C Schiffer", "M King", "O Anton", "MS Alam", "M Krutzik", "D Willsch", "L Mathey", "FK Wilhelm", "GP Guo"],
-                venue: "arXiv:2603.06644",
-                arxiv: "2603.06644",
-                pubDate: "2026-03",
-                summaryKey: "rd_ml_p3_summary"
-            },
-            {
-                title: "Quantum-Inspired Fine-Tuning for Few-Shot AIGC Detection via Phase-Structured Reparameterization",
-                authors: ["KY Xing", "H Fang", "ZY Chen", "ZH Li", "Y Yang", "WM Zhang", "GP Guo"],
-                venue: "arXiv:2603.02281",
-                arxiv: "2603.02281",
-                pubDate: "2026-03",
-                summaryKey: "rd_ml_p9_summary"
-            },
-            {
-                title: "AI-Generated Image Detection Algorithm Based on Classical-Quantum Hybrid Neural Network",
-                authors: ["J Xu", "H Fang", "Y Yang", "K Chen", "ZY Chen", "MH Dou", "L Qu", "WM Zhang", "GP Guo"],
-                venue: "Science China Information Sciences 69 (1), 112501",
-                doi: "10.1007/s11432-024-4475-4",
-                pubDate: "2026-01",
-                summaryKey: "rd_ml_p10_summary"
-            },
-            {
-                title: "Statistics-informed parameterized quantum circuit: towards practical quantum state preparation and learning via maximum entropy principle",
-                authors: ["XN Zhuang", "ZY Chen", "C Xue", "XF Xu", "C Wang", "HY Liu", "TP Sun", "YJ Wang", "YC Wu", "GP Guo"],
-                venue: "npj Quantum Information 12 (1), 45",
-                doi: "10.1038/s41534-026-01191-5",
-                arxiv: "2406.01335",
-                pubDate: "2026-01",
-                summaryKey: "rd_ml_p11_summary"
-            },
-            {
-                title: "Quantum-enhanced LLM efficient fine tuning",
-                authors: ["XF Kong", "L Li", "ZY Chen", "C Xue", "XF Xu", "HY Liu", "YC Wu", "Y Fang", "H Fang", "KJ Chen", "Y Yang", "MH Dou", "GP Guo"],
-                venue: "arXiv:2503.12790",
-                arxiv: "2503.12790",
-                pubDate: "2025-03",
-                summaryKey: "rd_ml_p2_summary"
-            },
-            {
-                title: "CAMEL: Physically Inspired Crosstalk-Aware Mapping and Gate Scheduling for Frequency-Tunable Quantum Chips",
-                authors: ["BH Lu", "P Wang", "ZY Chen", "HY Liu", "TP Sun", "P Duan", "YC Wu", "GP Guo"],
-                venue: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2025",
-                doi: "10.1109/TCAD.2024.3507580",
-                arxiv: "2311.18160",
-                pubDate: "2025-01",
-                summaryKey: "rd_ml_p5_summary"
-            },
-            {
-                title: "Quantum Ensemble Learning with Quantum Support Vector Machine",
-                authors: ["Z Yu", "Z Chen", "C Xue"],
-                venue: "2024 7th International Conference on Advanced Algorithms and Control Engineering (ICAACE), 1359-1363",
-                doi: "10.1109/ICAACE61206.2024.10548133",
-                pubDate: "2024-03",
-                summaryKey: "rd_ml_p14_summary"
-            },
-            {
-                title: "End-to-end quantum vision transformer: towards practical quantum speedup in large-scale models",
-                authors: ["C Xue", "ZY Chen", "XN Zhuang", "YJ Wang", "TP Sun", "JC Wang", "HY Liu", "YC Wu", "GP Guo"],
-                venue: "arXiv:2402.18940",
-                arxiv: "2402.18940",
-                pubDate: "2024-02",
-                summaryKey: "rd_ml_p1_summary"
-            },
-            {
-                title: "QAOA-based MRMR Algorithm for Feature Selection",
-                authors: ["X Jiang", "Z Chen", "J Zhang", "Z Yu", "L Wang", "H Mei"],
-                venue: "2023 International Conference on Advances in Artificial Intelligence and Applications (AAIA 2023)",
-                doi: "10.1145/3603273.3631193",
-                pubDate: "2023-11",
-                summaryKey: "rd_ml_p12_summary"
+                id: "ai-for-quantum",
+                titleKey: "rd_ml_sub2_title",
+                descKey: "rd_ml_sub2_desc",
+                themeKeys: [
+                    "rd_ml_theme_4",
+                    "rd_ml_theme_5",
+                    "rd_ml_theme_6"
+                ],
+                featured: [
+                    {
+                        title: "Looks Similar and Looks Good: A No-reference Image Quality Loss for Watermarking Framework",
+                        authors: ["Y Yang", "K Xing", "L Zhou", "L Zhao", "H Fang", "Z Chen", "W Zhang"],
+                        venue: "IEEE Transactions on Circuits and Systems for Video Technology 36 (9), 13993-14006",
+                        doi: "10.1109/TCSVT.2026.3695018",
+                        pubDate: "2026-09",
+                        summaryKey: "rd_ml_p13_summary"
+                    },
+                    {
+                        title: "Q-Tag: Watermarking Quantum Circuit Generative Models",
+                        authors: ["Y Yang", "YZ Long", "H Fang", "ZY Chen", "ZH Li", "WM Zhang", "GP Guo"],
+                        venue: "Science China Information Sciences 69 (8), 180504",
+                        doi: "10.1007/s11432-025-5016-2",
+                        arxiv: "2602.23085",
+                        pubDate: "2026-07",
+                        summaryKey: "rd_ml_p7_summary"
+                    },
+                    {
+                        title: "QuantumQA: Enhancing Scientific Reasoning via Physics-Consistent Dataset and Verification-Aware Reinforcement Learning",
+                        authors: ["SX Qu", "TP Sun", "YJ Wang", "HY Liu", "C Xue", "XF Xu", "H Fang", "Y Yang", "YC Wu", "GP Guo", "ZY Chen"],
+                        venue: "ACL 2026",
+                        arxiv: "2604.18176",
+                        pubDate: "2026-04",
+                        summaryKey: "rd_ml_p4_summary"
+                    },
+                    {
+                        title: "Neural Network-Based Frequency Optimization for Superconducting Quantum Chips",
+                        authors: ["BH Lu", "QS Li", "P Wang", "ZY Chen", "YC Wu", "GP Guo"],
+                        venue: "Chinese Physics Letters 42 (3), 030204",
+                        doi: "10.1088/0256-307X/42/3/030204",
+                        arxiv: "2412.01183",
+                        pubDate: "2025-03",
+                        summaryKey: "rd_ml_p15_summary"
+                    },
+                    {
+                        title: "CAMEL: Physically Inspired Crosstalk-Aware Mapping and Gate Scheduling for Frequency-Tunable Quantum Chips",
+                        authors: ["BH Lu", "P Wang", "ZY Chen", "HY Liu", "TP Sun", "P Duan", "YC Wu", "GP Guo"],
+                        venue: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2025",
+                        doi: "10.1109/TCAD.2024.3507580",
+                        arxiv: "2311.18160",
+                        pubDate: "2025-01",
+                        summaryKey: "rd_ml_p5_summary"
+                    }
+                ]
             }
         ]
     },
@@ -438,8 +465,7 @@ const researchDirections = [
         themeKeys: [
             "rd_ec_theme_1",
             "rd_ec_theme_2",
-            "rd_ec_theme_3",
-            "rd_ec_theme_4"
+            "rd_ec_theme_3"
         ],
         featured: [
             {
@@ -492,15 +518,6 @@ const researchDirections = [
                 arxiv: "2405.09035",
                 pubDate: "2025-07",
                 summaryKey: "rd_ec_p1_summary"
-            },
-            {
-                title: "Neural Network-Based Frequency Optimization for Superconducting Quantum Chips",
-                authors: ["BH Lu", "QS Li", "P Wang", "ZY Chen", "YC Wu", "GP Guo"],
-                venue: "Chinese Physics Letters 42 (3), 030204",
-                doi: "10.1088/0256-307X/42/3/030204",
-                arxiv: "2412.01183",
-                pubDate: "2025-03",
-                summaryKey: "rd_ec_p9_summary"
             },
             {
                 title: "Scalable Constant-Time Logical Gates for Large-Scale Quantum Computation Using Window-Based Correlated Decoding",
