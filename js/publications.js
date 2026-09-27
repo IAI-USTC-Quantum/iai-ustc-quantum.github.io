@@ -20,6 +20,15 @@ const publications = [
     },
     {
         year: 2026,
+        title: "Quantum Defensive Distillation",
+        authors: ["HF Zhang", "ZY Chen", "P Duan", "GP Guo"],
+        venue: "Chinese Physics B (in press), 2026",
+        citations: 0,
+        doi: "10.1088/1674-1056/ae7278",
+        pubDate: "2026-09"
+    },
+    {
+        year: 2026,
         title: "Realizing scalable conditional operations through auxiliary energy levels",
         authors: ["S Zhang", "P Duan", "YJ Wang", "TL Wang", "P Wang", "RZ Zhao", "XY Yang"],
         venue: "Science China Information Sciences 69 (9), 192501",
@@ -389,6 +398,33 @@ const publications = [
     },
     {
         year: 2024,
+        title: "QSRA: A QPU Scheduling and Resource Allocation Approach for Cloud-Based Quantum Computing",
+        authors: ["B Lu", "Z Chen", "Y Wu"],
+        venue: "arXiv:2411.05283",
+        citations: 7,
+        arxiv: "2411.05283",
+        pubDate: "2024-11"
+    },
+    {
+        year: 2024,
+        title: "Correction of microwave pulse reflection by digital filters in superconducting quantum circuits",
+        authors: ["LL Guo", "P Duan", "L Du", "HF Zhang", "HR Tao", "Y Chen", "XY Yang", "C Zhang", "ZL Jia", "WC Kong", "ZY Chen", "GP Guo"],
+        venue: "Chinese Physics B 33 (9), 090303",
+        citations: 4,
+        doi: "10.1088/1674-1056/ad5d98",
+        pubDate: "2024-07"
+    },
+    {
+        year: 2024,
+        title: "Quantum Ensemble Learning with Quantum Support Vector Machine",
+        authors: ["Z Yu", "Z Chen", "C Xue"],
+        venue: "2024 7th International Conference on Advanced Algorithms and Control Engineering (ICAACE), 1359-1363",
+        citations: 6,
+        doi: "10.1109/ICAACE61206.2024.10548133",
+        pubDate: "2024-03"
+    },
+    {
+        year: 2024,
         title: "End-to-end quantum vision transformer: towards practical quantum speedup in large-scale models",
         authors: ["C Xue", "ZY Chen", "XN Zhuang", "YJ Wang", "TP Sun", "JC Wang", "HY Liu", "YC Wu", "GP Guo"],
         venue: "arXiv:2402.18940",
@@ -443,6 +479,60 @@ const publications = [
         citations: 0,
         doi: "10.1063/5.0211159",
         pubDate: "2024-07"
+    },
+    {
+        year: 2023,
+        title: "QAOA-based MRMR Algorithm for Feature Selection",
+        authors: ["X Jiang", "Z Chen", "J Zhang", "Z Yu", "L Wang", "H Mei"],
+        venue: "2023 International Conference on Advances in Artificial Intelligence and Applications (AAIA 2023)",
+        citations: 5,
+        doi: "10.1145/3603273.3631193",
+        pubDate: "2023-11"
+    },
+    {
+        year: 2023,
+        title: "Can Variational Quantum Algorithms Demonstrate Quantum Advantages? Time Really Matters",
+        authors: ["HY Liu", "ZY Chen", "TP Sun", "C Xue", "YC Wu", "GP Guo"],
+        venue: "arXiv:2307.04089",
+        citations: 10,
+        arxiv: "2307.04089",
+        pubDate: "2023-07"
+    },
+    {
+        year: 2023,
+        title: "Classical-Assisted Quantum Ground State Preparation with Tensor Network States and Monte Carlo Sampling",
+        authors: ["FY Le", "ZY Chen", "L Wang", "C Xue", "C Wang", "YJ Han", "YC Wu", "Q Yan"],
+        venue: "arXiv:2306.16831",
+        citations: 1,
+        arxiv: "2306.16831",
+        pubDate: "2023-06"
+    },
+    {
+        year: 2023,
+        title: "Scalable Program Implementation and Simulation of the Large-Scale Quantum Algorithm: Quantum Linear Solver and Beyond",
+        authors: ["ZY Chen", "C Xue", "XN Zhuang", "TP Sun", "HY Liu", "Y Li", "YC Wu", "GP Guo"],
+        venue: "arXiv:2303.06890",
+        citations: 0,
+        arxiv: "2303.06890",
+        pubDate: "2023-03"
+    },
+    {
+        year: 2023,
+        title: "Efficient and error-resilient data access protocols for a limited-sized quantum random access memory",
+        authors: ["ZY Chen", "C Xue", "YJ Wang", "TP Sun", "HY Liu", "XN Zhuang", "MH Dou", "TR Zou"],
+        venue: "arXiv:2303.05207",
+        citations: 10,
+        arxiv: "2303.05207",
+        pubDate: "2023-03"
+    },
+    {
+        year: 2023,
+        title: "VQNet 2.0: A New Generation Machine Learning Framework that Unifies Classical and Quantum",
+        authors: ["H Bian", "Z Jia", "MH Dou", "Y Fang", "L Li", "Y Zhao", "H Wang", "Z Zhou", "W Wang"],
+        venue: "arXiv:2301.03251",
+        citations: 9,
+        arxiv: "2301.03251",
+        pubDate: "2023-01"
     },
     {
         year: 2023,
