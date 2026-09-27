@@ -4,10 +4,75 @@ const publications = [
         title: "Spectator Leakage Suppression via Invariant Subspace Engineering for CZ Gates in Superconducting Quantum Circuits",
         authors: ["P Wang", "BH Lu", "TL Wang", "S Zhang", "ZY Chen", "HF Zhang", "RZ Zhao", "XY Yang", "ZA Zhao", "ZZ Zhang", "XX Song", "YC Wu", "P Duan", "GP Guo"],
         venue: "Physical Review Letters 137 (10), 100802",
-        citations: 0,
+        citations: 2,
         doi: "10.1103/zywf-twfv",
         arxiv: "2507.14531",
         pubDate: "2026-09"
+    },
+    {
+        year: 2026,
+        title: "Looks Similar and Looks Good: A No-reference Image Quality Loss for Watermarking Framework",
+        authors: ["Y Yang", "K Xing", "L Zhou", "L Zhao", "H Fang", "Z Chen", "W Zhang"],
+        venue: "IEEE Transactions on Circuits and Systems for Video Technology 36 (9), 13993-14006",
+        citations: 12,
+        doi: "10.1109/TCSVT.2026.3695018",
+        pubDate: "2026-09"
+    },
+    {
+        year: 2026,
+        title: "Realizing scalable conditional operations through auxiliary energy levels",
+        authors: ["S Zhang", "P Duan", "YJ Wang", "TL Wang", "P Wang", "RZ Zhao", "XY Yang"],
+        venue: "Science China Information Sciences 69 (9), 192501",
+        citations: 12,
+        doi: "10.1007/s11432-025-4760-9",
+        pubDate: "2026-08"
+    },
+    {
+        year: 2026,
+        title: "QPanda 3.0: A scalable and high performance compilation framework for large scale quantum programs",
+        authors: ["TR Zou", "Y Fang", "J Wang", "J Fu", "SB Zhao", "L Yu", "DY Zhao", "H Wang"],
+        venue: "Quantum Review Letters 2, 172-184",
+        citations: 0,
+        doi: "10.1016/j.qrl.2026.08.001",
+        pubDate: "2026-08"
+    },
+    {
+        year: 2026,
+        title: "Demonstrating Coherent Quantum Routers for Bucket-Brigade Quantum Random Access Memory on a Superconducting Processor",
+        authors: ["S Zhang", "YJ Wang", "P Wang", "RZ Zhao", "XY Yang", "ZA Zhao", "TL Wang", "HF Zhang", "ZF Li", "HR Tao", "LL Guo", "L Du", "C Zhang", "ZL Jia", "WC Kong", "ZZ Zhang", "XX Song", "YC Wu", "ZY Chen", "P Duan", "GP Guo"],
+        venue: "Physical Review X 16 (3), 031051",
+        citations: 62,
+        doi: "10.1103/h5m3-qrn9",
+        arxiv: "2505.13958",
+        pubDate: "2026-08"
+    },
+    {
+        year: 2026,
+        title: "Quantum Simulation of Non-Hermitian Special Functions and Dynamics via Contour-based Matrix Decomposition",
+        authors: ["C Wang", "HY Liu", "C Xue", "XN Zhuang", "MH Dou", "ZY Chen", "GP Guo"],
+        venue: "Quantum Science and Technology 11, 035027",
+        citations: 5,
+        doi: "10.1088/2058-9565/ae7b7e",
+        arxiv: "2511.10267",
+        pubDate: "2026-06"
+    },
+    {
+        year: 2026,
+        title: "Improving the trainability of variational quantum eigensolvers on noisy intermediate-scale quantum computers for solving portfolio optimization using convex interpolation",
+        authors: ["S Wang", "G Li", "Z Wang", "Z Chen", "P Wang", "Y Gu", "YC Wu", "GP Guo"],
+        venue: "Physical Review A 113 (5), 052441",
+        citations: 4,
+        doi: "10.1103/2p4m-5mt8",
+        pubDate: "2026-05"
+    },
+    {
+        year: 2026,
+        title: "A Unified Poisson Summation Framework for Generalized Quantum Matrix Transformations",
+        authors: ["C Wang", "XN Zhuang", "M Dou", "ZY Chen", "GP Guo"],
+        venue: "arXiv:2604.02874",
+        citations: 3,
+        arxiv: "2604.02874",
+        pubDate: "2026-04"
     },
     {
         year: 2026,
@@ -135,7 +200,7 @@ const publications = [
         year: 2026,
         title: "Statistics-informed parameterized quantum circuit: towards practical quantum state preparation and learning via maximum entropy principle",
         authors: ["XN Zhuang", "ZY Chen", "C Xue", "XF Xu", "C Wang", "HY Liu", "TP Sun", "YJ Wang", "YC Wu", "GP Guo"],
-        venue: "npj Quantum Information 12",
+        venue: "npj Quantum Information 12 (1), 45",
         citations: 0,
         doi: "10.1038/s41534-026-01191-5",
         arxiv: "2406.01335",
@@ -154,7 +219,7 @@ const publications = [
         year: 2026,
         title: "Variational quantum nonlinear solver for nonlinear dynamics: Implementation and investigation",
         authors: ["TY Ma", "CC Ye", "MH Dou", "ZY Chen"],
-        venue: "Physics of Fluids 38, 4",
+        venue: "Physics of Fluids 38 (4)",
         citations: 0,
         doi: "10.1063/5.0251597",
         pubDate: "2026-04"
@@ -168,15 +233,6 @@ const publications = [
         doi: "10.1016/j.future.2026.108484",
         arxiv: "2408.11311",
         pubDate: "2026-03"
-    },
-    {
-        year: 2025,
-        title: "Quantum Simulation of Non-unitary Dynamics via Contour-based Matrix Decomposition",
-        authors: ["C Wang", "HY Liu", "C Xue", "XN Zhuang", "MH Dou", "ZY Chen", "GP Guo"],
-        venue: "arXiv:2511.10267",
-        citations: 4,
-        arxiv: "2511.10267",
-        pubDate: "2025-11"
     },
     {
         year: 2025,
@@ -224,15 +280,6 @@ const publications = [
         doi: "10.1038/s41534-025-00999-9",
         arxiv: "2405.09035",
         pubDate: "2025-07"
-    },
-    {
-        year: 2025,
-        title: "Demonstrating Coherent Quantum Routers for Bucket-Brigade Quantum Random Access Memory on a Superconducting Processor",
-        authors: ["S Zhang", "YJ Wang", "P Wang", "RZ Zhao", "XY Yang", "ZA Zhao", "TL Wang", "HF Zhang", "ZF Li", "HR Tao", "LL Guo", "L Du", "C Zhang", "ZL Jia", "WC Kong", "ZZ Zhang", "XX Song", "YC Wu", "ZY Chen", "P Duan", "GP Guo"],
-        venue: "arXiv:2505.13958",
-        citations: 5,
-        arxiv: "2505.13958",
-        pubDate: "2025-05"
     },
     {
         year: 2025,
@@ -330,6 +377,15 @@ const publications = [
         doi: "10.1002/qute.202400519",
         arxiv: "2306.10250",
         pubDate: "2025-01"
+    },
+    {
+        year: 2024,
+        title: "Scalable Constant-Time Logical Gates for Large-Scale Quantum Computation Using Window-Based Correlated Decoding",
+        authors: ["JX Zhang", "ZY Chen", "JN Li", "TH Wei", "HY Liu", "XN Zhuang", "QS Li", "YC Wu"],
+        venue: "arXiv:2410.16963",
+        citations: 4,
+        arxiv: "2410.16963",
+        pubDate: "2024-10"
     },
     {
         year: 2024,
